@@ -36,7 +36,7 @@ export const orderDetailsReducer = (
     case ORDER_DETAILS_REQUEST:
       return { loading: true };
     case ORDER_DETAILS_SUCCESS:
-      return { loading: false, success: true };
+      return { loading: false, success: true,order:action.payload };
 
     case ORDER_DETAILS_FAIL:
       return {

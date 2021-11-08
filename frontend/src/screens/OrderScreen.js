@@ -12,7 +12,7 @@ const OrderScreen = ({ match }) => {
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
-
+  console.log("order",order);
   if (!loading) {
     //Calculate prices
     const addDecimals = (num) => {

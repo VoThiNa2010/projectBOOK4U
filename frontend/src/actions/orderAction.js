@@ -13,7 +13,7 @@ export const createOrder= (order) => async (dispatch, getState) => {
       type: ORDER_CREATE_REQUEST
     })
 
-    const {useLogin: {userInfo},} = getState()
+    const userInfo=getState().userLogin.userInfo;
 
     const config = {
       headers: {

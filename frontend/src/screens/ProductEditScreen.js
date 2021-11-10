@@ -9,7 +9,7 @@ import FormContainer from "../components/FormContainer";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 
-const ProductEditScreen = ({ match, history }) => {
+function ProductEditScreen ({ match, history }) {
   const productId = match.params.id;
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -50,7 +50,7 @@ const ProductEditScreen = ({ match, history }) => {
       }
     }
   }, [dispatch, history, product, successUpdate]);
-
+  
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
     const formData = new FormData();
@@ -72,7 +72,7 @@ const ProductEditScreen = ({ match, history }) => {
       setUploading(false);
     }
   };
-
+  console.log("match");
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(
@@ -88,7 +88,7 @@ const ProductEditScreen = ({ match, history }) => {
       })
     );
   };
-
+  console.log("match 2");
   return (
     <>
       <Link to="/admin/productList" className="btn btn-light my-3">
@@ -132,15 +132,22 @@ const ProductEditScreen = ({ match, history }) => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.File
+              
+              {/* <Form.File
                 id="image-file"
                 lable="Choose File"
                 custom
                 onChange={uploadFileHandler}
-              ></Form.File>
+              ></Form.File> */}
+              <Form.Control
+              type="file"
+              required
+              name="file"
+              onChange={uploadFileHandler}
+            />
               {uploading && <Loader />}
             </Form.Group>
-
+            
             <Form.Group controlId="brand">
               <Form.Label>Brand</Form.Label>
               <Form.Control

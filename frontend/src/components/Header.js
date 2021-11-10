@@ -29,36 +29,36 @@ const Header = () => {
             <Nav className="ms-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i> Cart
+                  <i className="fas fa-shopping-cart"></i> Giỏ hàng
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                    <NavDropdown.Item>Thông tin</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     {" "}
-                    Logout{" "}
+                    Đăng xuất{" "}
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login">
                   <Nav.Link>
-                    <i className="fas fa-user"></i>Sign In
+                    <i className="fas fa-user"></i>Đăng nhập
                   </Nav.Link>
                 </LinkContainer>
               )}
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title="Admin" id="adminmenu">
                   <LinkContainer to="/admin/userlist">
-                    <NavDropdown.Item>Users</NavDropdown.Item>
+                    <NavDropdown.Item>Danh sách người dùng</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/admin/productlist">
-                    <NavDropdown.Item>Products</NavDropdown.Item>
+                    <NavDropdown.Item>Sản phẩm</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/admin/orderlist">
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                    <NavDropdown.Item>Đơn đặt hàng</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}

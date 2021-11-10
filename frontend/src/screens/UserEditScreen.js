@@ -51,10 +51,10 @@ const UserEditScreen = ({ match, history }) => {
   return (
     <>
       <Link to="/admin/userList" className="btn btn-light my-3">
-        Go Back
+        Quay lại
       </Link>
       <FormContainer>
-        <h1>Edit User</h1>
+        <h1>Thay đổi thông tin người dùng</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
@@ -93,7 +93,7 @@ const UserEditScreen = ({ match, history }) => {
             </Form.Group>
 
             <Button type="submit" variant="primary">
-              Update
+              Cập nhật
             </Button>
           </Form>
         )}

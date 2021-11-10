@@ -113,29 +113,29 @@ const PlaceOrderScreen = ({ history }) => {
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Tóm tắt đơn hàng</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col> Items </Col>
+                  <Col> Sản phẩm </Col>
                   <Col>{cart.itemsPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col> Shipping </Col>
+                  <Col> Phí giao hàng </Col>
                   <Col>{cart.shippingPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Tax</Col>
+                  <Col>Thuế</Col>
                   <Col>{cart.taxPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
+                  <Col>Tổng tiền</Col>
                   <Col>{cart.totalPrice} VND</Col>
                 </Row>
               </ListGroup.Item>

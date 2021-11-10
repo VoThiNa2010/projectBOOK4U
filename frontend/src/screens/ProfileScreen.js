@@ -49,7 +49,7 @@ const ProfileScreen = ({ history }) => {
   return(
     <Row>
       <Col md={3}>
-        <h2>User Profile</h2>
+        <h2>Thông tin người dùng</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
         {success && (
@@ -59,52 +59,52 @@ const ProfileScreen = ({ history }) => {
 
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="name">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>Tên người dùng</Form.Label>
             <Form.Control
               type="name"
-              placeholder="Enter name"
+              placeholder="Nhập tên người dùng"
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Form.Group controlId="email">
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label>Địa chỉ Email</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter email"
+              placeholder="Nhập email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Form.Group controlId="password">
-            <Form.Label>Password Address</Form.Label>
+            <Form.Label>Nhập mật khẩu mới</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Enter password"
+              placeholder="Nhập mật khẩu"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Form.Group controlId="confirmPassword">
-            <Form.Label>Confirm Password</Form.Label>
+            <Form.Label>Xác nhận mật khẩu</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Confirm password"
+              placeholder="Xác nhận mật khẩu"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
           <Button type="submit" variant="primary">
-            Update
+            Cập nhật
           </Button>
         </Form>
       </Col>
       <Col md={9}>
-        <h2>My Orders</h2>
+        <h2>Đơn hàng đã đặt</h2>
       </Col>
     </Row>
   )

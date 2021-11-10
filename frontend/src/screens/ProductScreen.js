@@ -60,7 +60,7 @@ const ProductScreen = ({ history, match }) => {
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
-        Go Back
+        Quay lại
       </Link>
       {loading ? (
         <Loader />
@@ -75,7 +75,12 @@ const ProductScreen = ({ history, match }) => {
             <Col md={6}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3>{product.name} </h3>
+                  <Row>
+                    <Col>Giá: </Col>
+                    <Col>
+                      <strong>{product.price} VND</strong>
+                    </Col>
+                  </Row>
                 </ListGroup.Item>
 
                 <ListGroup.Item>

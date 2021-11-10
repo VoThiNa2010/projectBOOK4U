@@ -18,17 +18,17 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
      <Nav.Item>
         {step2 ? (
           <LinkContainer to="/shipping">
-            <Nav.Link> Địa chỉ giao hàng</Nav.Link>
+            <Nav.Link> Giao hàng</Nav.Link>
           </LinkContainer>
         ) : (
-          <Nav.Link disabled>Địa chỉ giao hàng</Nav.Link>
+          <Nav.Link disabled>Giao hàng</Nav.Link>
         )}
       </Nav.Item>
 
        <Nav.Item>
         {step3 ? (
           <LinkContainer to="/payment">
-            <Nav.Link>Hình thức thanh toán</Nav.Link>
+            <Nav.Link> Thanh toán</Nav.Link>
           </LinkContainer>
         ) : (
           <Nav.Link disabled>Thanh toán</Nav.Link>
@@ -38,7 +38,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
        <Nav.Item>
         {step4 ? (
           <LinkContainer to="/placeorder">
-            <Nav.Link> Place Order</Nav.Link>
+            <Nav.Link> Hóa đơn</Nav.Link>
           </LinkContainer>
         ) : (
           <Nav.Link disabled>Hóa đơn</Nav.Link>

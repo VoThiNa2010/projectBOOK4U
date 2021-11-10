@@ -92,10 +92,10 @@ function ProductEditScreen ({ match, history }) {
   return (
     <>
       <Link to="/admin/productList" className="btn btn-light my-3">
-        Go Back
+        Quay lại
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1>Thêm sản phẩm</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
@@ -108,27 +108,27 @@ function ProductEditScreen ({ match, history }) {
               <Form.Label>Tên</Form.Label>
               <Form.Control
                 type="name"
-                placeholder="Nhập tên của bạn"
+                placeholder="Nhập tên Sản phẩm"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId="price">
-              <Form.Label>Price</Form.Label>
+              <Form.Label>Giá sản phẩm</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Nhập price"
+                placeholder="Nhập giá sản phẩm (VNĐ)"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId="image">
-              <Form.Label>Image</Form.Label>
+              <Form.Label>Ảnh</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Nhập image url"
+                placeholder="Nhập url ảnh"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
@@ -149,47 +149,47 @@ function ProductEditScreen ({ match, history }) {
             </Form.Group>
             
             <Form.Group controlId="brand">
-              <Form.Label>Brand</Form.Label>
+              <Form.Label>Nhãn hiệu</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Nhập brand"
+                placeholder="Nhập nhãn hiệu"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId="countInStock">
-              <Form.Label>countInStock</Form.Label>
+              <Form.Label>Số lượng tồn kho</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Nhập countInStock"
+                placeholder="Nhập Số lượng"
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId="category">
-              <Form.Label>category</Form.Label>
+              <Form.Label>Thể loại</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Nhập category"
+                placeholder="Nhập thể loại"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId="description">
-              <Form.Label>Description</Form.Label>
+              <Form.Label>Mô tả</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Nhập description"
+                placeholder="Nhập mô tả"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Button type="submit" variant="primary">
-              Update
+              Cập nhật
             </Button>
           </Form>
         )}

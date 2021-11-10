@@ -7,8 +7,7 @@ import Loader from "../components/Loader";
 
 import { listProducts } from "../actions/productActions";
 
-const HomeScreen = (match) => {
-  console.log(match)
+const HomeScreen = ({match}) => {
   const keyword = match.params.keyword
   const dispatch = useDispatch();
 

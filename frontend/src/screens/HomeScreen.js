@@ -20,29 +20,7 @@ const HomeScreen = ({match}) => {
 
   return (
     <>
-      <Carousel fade>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="images/bia1.png"
-            alt="First slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="images/bia4.png"
-            alt="Second slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="images/bia3.png"
-            alt="Third slide"
-          />
-        </Carousel.Item>
-      </Carousel>
+     
       <h1>Danh sách sản phẩm</h1>
 
       {loading ? (

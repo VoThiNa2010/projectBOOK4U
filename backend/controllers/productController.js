@@ -12,7 +12,7 @@ const getProducts = asyncHandler(async (req, res) => {
     $option: 'i'
   }
 }: {}
-const products = await Products.find({...keyword})
+const products = await Product.find({...keyword})
 res.json(products)
 });
 // @desc Fetch single products

@@ -1,6 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { Navbar, Nav, NavDropdown, ListGroup, ListGroupItem, footer} from "react-bootstrap";
 
 const Footer = () => {
   return (
@@ -16,7 +14,7 @@ const Footer = () => {
               <p class="fs-5">Tài khoản</p>
               <p class="fs-5">Trở thành hội viên</p>
               <p class="fs-5">Đánh giá</p>
-              <p class="fs-5">Giúp đỡ</p>
+              <p class="fs-5">Hỗ trợ</p>
             </div>
             <div class="col">
               <h3 class="fw-bold">SOCIAL MEDIA</h3>

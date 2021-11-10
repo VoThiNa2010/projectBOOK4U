@@ -42,7 +42,7 @@ const CartScreen = ({ match, location, history }) => {
         {cartItems.length === 0 ? (
           <Message>
             {" "}
-            GIỎ HÀNG CÒN TRỐNG <Link to="/">Tiếp tục mua sắp</Link>
+            GIỎ HÀNG CÒN TRỐNG <Link to="/">Tiếp tục mua sắm</Link>
           </Message>
         ) : (
           <ListGroup variant="flush">

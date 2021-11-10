@@ -6,8 +6,14 @@ import Product from "../models/productModel.js";
 // @ access Public
 
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
-  res.json(products);
+  const keyword = req.query.keyword?{
+  name: {
+    $regex: req.query.keyword,
+    $option: 'i'
+  }
+}: {}
+const products = await Products.find({...keyword})
+res.json(products)
 });
 // @desc Fetch single products
 // @route GET/api/products /:id
@@ -91,6 +97,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 // @ access Private/Admin
 
 const createProductReview = asyncHandler(async (req, res) => {
+  const { rating, comment } = req.body;
   const product = await Product.findById(req.params.id);
   if (product) {
     const alreadyReviewed = product.reviews.find(
@@ -110,8 +117,9 @@ const createProductReview = asyncHandler(async (req, res) => {
     };
     product.reviews.push(review);
     product.numReviews = product.reviews.length;
-    product.rating = product.review.reduce((acc, item) => item.rating + acc, 0) /
-    product.reviews.length;
+    product.rating =
+      product.reviews.reduce((acc, item) => item.rating + acc, 0) /
+      product.reviews.length
     await product.save();
     res.status(201).json({ message: "Review added" });
   } else {

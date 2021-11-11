@@ -70,7 +70,7 @@ const ProductListScreen = ({ history , match}) => {
               <th>Tên</th>
               <th>Giá sản phẩm</th>
               <th>Thể loại</th>
-              <th>Nhãn hiệu</th>
+              <th>Nhà xuất bản</th>
               <th></th>
             </tr>
           </thead>

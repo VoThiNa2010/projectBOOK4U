@@ -16,7 +16,7 @@ const OrderScreen = ({ match }) => {
   if (!loading) {
     //Calculate prices
     const addDecimals = (num) => {
-      return (Math.round(num * 100) / 100).toFixed(2);
+      return (Math.round(num * 100) / 100).toFixed(0);
     };
     order.itemsPrice = addDecimals(
       order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)

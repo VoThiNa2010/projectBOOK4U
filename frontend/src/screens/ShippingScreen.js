@@ -33,10 +33,10 @@ const dispatch = useDispatch()
       <h1>Địa chỉ giao hàng</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="address">
-          <Form.Label>Địa chỉ nhà</Form.Label>
+          <Form.Label>Địa chỉ chi tiết</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter Address"
+            placeholder="Nhập địa chỉ chi tiết"
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
@@ -44,10 +44,10 @@ const dispatch = useDispatch()
         </Form.Group>
 
         <Form.Group controlId="City">
-          <Form.Label>Thành phố</Form.Label>
+          <Form.Label>Xã/ Quận</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter City"
+            placeholder="Nhập xã/quận của bạn"
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
@@ -55,10 +55,10 @@ const dispatch = useDispatch()
         </Form.Group>
 
         <Form.Group controlId="postalCode">
-          <Form.Label>Mã bưu điện</Form.Label>
+          <Form.Label>Huyện</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter Postal Code"
+            placeholder="Nhập huyện"
             value={postalCode}
             required
             onChange={(e) => setPostalCode(e.target.value)}
@@ -66,10 +66,10 @@ const dispatch = useDispatch()
         </Form.Group>
 
         <Form.Group controlId="country">
-          <Form.Label>Đất nước</Form.Label>
+          <Form.Label>Tỉnh</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter country"
+            placeholder="Nhập tỉnh"
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}

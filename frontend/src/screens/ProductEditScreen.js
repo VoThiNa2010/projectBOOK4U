@@ -95,7 +95,7 @@ function ProductEditScreen ({ match, history }) {
         Quay lại
       </Link>
       <FormContainer>
-        <h1>Thêm sản phẩm</h1>
+        <h1>Thêm sản phẩm/ Chỉnh sửa sản phẩm</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
@@ -149,10 +149,10 @@ function ProductEditScreen ({ match, history }) {
             </Form.Group>
             
             <Form.Group controlId="brand">
-              <Form.Label>Nhãn hiệu</Form.Label>
+              <Form.Label>Nhà xuất bản</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Nhập nhãn hiệu"
+                placeholder="Nhập nhà xuất bản"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>

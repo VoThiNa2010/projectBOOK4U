@@ -97,10 +97,10 @@ const products = [
     numReviews: 12,
   },
 {
-    name: 'Học tốt những năm đại học',
+    name: 'Bí quyết học bổng',
     image: '/images/24.jpg',
     description:
-      'Học tốt những năm đại học - giúp bạn có những năm đại học dễ dàng hơn bao giờ hết',
+      'Bí quyết học bổng - giúp bạn có những năm đại học dễ dàng hơn bao giờ hết',
     brand: 'Đại học quốc gia ',
     category: 'Sách đại cương',
     price: 150000,

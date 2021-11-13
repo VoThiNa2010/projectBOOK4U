@@ -15,7 +15,7 @@ const UserListScreen = ({ history }) => {
   const { userInfo } = userLogin;
 
   const userDelete = useSelector((state) => state.userDelete);
-  const { succcess: successDelete } = userDelete;
+  const successDelete = userDelete.success;
 
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
@@ -30,6 +30,7 @@ const UserListScreen = ({ history }) => {
     if (window.confirm("Are you sure?")) {
       dispatch(deleteUsers(id));
     }
+
   };
   return (
     <>

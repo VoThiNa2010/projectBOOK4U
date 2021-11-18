@@ -17,7 +17,7 @@ const ProfileScreen = ({ history }) => {
 
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
-
+  console.log("user",user);
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -58,6 +58,7 @@ const ProfileScreen = ({ history }) => {
         {loading && <Loader />}
 
         <Form onSubmit={submitHandler}>
+          <Form.Label>{user.isAdmin ? "Quyền admin" :""}</Form.Label>
           <Form.Group controlId="name">
             <Form.Label>Tên người dùng</Form.Label>
             <Form.Control

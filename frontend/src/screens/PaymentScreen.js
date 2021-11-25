@@ -13,7 +13,7 @@ const PaymentScreen = ({ history }) => {
     history.push("/shipping");
   }
 
-  const [paymentMethod, setPaymentMethod] = useState("MoMo");
+  const [paymentMethod, setPaymentMethod] = useState("Paypal");
 
   const dispatch = useDispatch();
 
@@ -31,27 +31,27 @@ const PaymentScreen = ({ history }) => {
         <Form.Group>
           <Form.Label as="legend">Chọn phương thức</Form.Label>
 
-        <Col>
-          <Form.Check
-            type="radio"
-            label="MoMo"
-            id="MoMo"
-            name="paymentMethod"
-            value="MoMo"
-            checked
-            onChange={(e) => setPaymentMethod(e.target.value)}
-          ></Form.Check>
+          <Col>
+            <Form.Check
+              type="radio"
+              label="Paypal"
+              id="Paypal"
+              name="paymentMethod"
+              value="Paypal"
+              checked
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            ></Form.Check>
+            <Form.Check
+              type="radio"
+              label="Tiền mặt"
+              id="Tiền mặt"
+              name="paymentMethod"
+              value="Tiền mặt"
+              checked
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            ></Form.Check>
 
-         {/*<Form.Check
-            type="radio"
-            label="Stripe"
-            id="Stripe"
-            name="paymentMethod"
-            value="Stripe"
-            checked
-            onChange={(e) => setPaymentMethod(e.target.value)}
-          ></Form.Check>*/}
-        </Col>
+          </Col>
         </Form.Group>
         <Button type="submit" variant="primary">
           Tiếp tục

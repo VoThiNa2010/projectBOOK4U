@@ -32,7 +32,7 @@ const CartScreen = ({ match, location, history }) => {
     dispatch(removeFromCart(id))
   };
   const checkoutHandler = (id) => {
-      history.push('/login?redirect=shipping')
+    history.push('/login?redirect=shipping')
   }
 
   return (
@@ -90,22 +90,22 @@ const CartScreen = ({ match, location, history }) => {
       </Col>
 
       <Col md={4}>
-          <Card>
-              <ListGroup.Item>
-                  <h2>Tổng ({cartItems.reduce((acc,item) => acc + item.qty, 0)}) sản phẩm</h2>
-                  {cartItems.reduce((acc,item) => acc + item.qty*item.price, 0).toFixed(2)} VNĐ
-              </ListGroup.Item>
-              <ListGroup.Item>
-              <Button type = 'button' className = 'btn-block' disabled = {cartItems.length === 0} 
-              onClick = {checkoutHandler}>
-                TIẾN HÀNH ĐẶT HÀNG
+        <Card>
+          <ListGroup.Item>
+            <h2>Tổng ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) sản phẩm</h2>
+            {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(0)} VNĐ
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <Button type='button' className='btn-block' disabled={cartItems.length === 0}
+              onClick={checkoutHandler}>
+              TIẾN HÀNH ĐẶT HÀNG
 
-              </Button>
-              </ListGroup.Item>
-          </Card>
+            </Button>
+          </ListGroup.Item>
+        </Card>
       </Col>
 
-      
+
     </Row>
   );
 };

@@ -23,6 +23,10 @@ import {
   USER_UPDATE_SUCCESS,
   USER_UPDATE_FAIL,
   USER_DETAILS_RESET,
+  RESET_PASS_REQUEST,
+  RESET_PASS_SUCCESS,
+  RESET_PASS_FAIL,
+
 
 } from "../constants/userConstants";
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
@@ -270,5 +274,32 @@ export const updateUser = (user) => async (dispatch, getState) => {
           ? error.response.data.message
           : error.message,
     });
+  }
+};
+export const resetNewPass = (inform) => async (dispatch) => {
+  try {
+      dispatch({
+          type: RESET_PASS_REQUEST,
+      });
+
+      const config = {
+          headers: {
+              "Content-type": "application/json",
+          }
+      }
+      const { data } = await axios.put(`/api/users/reset`, inform, config);
+
+      dispatch({
+          type: RESET_PASS_SUCCESS,
+          payload: data,
+      });
+  } catch (error) {
+      dispatch({
+          type: RESET_PASS_FAIL,
+          payload:
+              error.response && error.response.data.message
+                  ? error.response.data.message
+                  : error.message,
+      });
   }
 };

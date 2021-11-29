@@ -1,0 +1,45 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+}
+.fa-facebook-f {
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 10px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-instagram {
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 10px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 5px;
+}
+
+.fa-github {
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 10px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+}
+.copyright {
+    background-color: rgba(42, 110, 236, 0.2);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    cursor: pointer;
+}

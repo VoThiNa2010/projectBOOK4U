@@ -24,6 +24,9 @@ import {
     USER_UPDATE_FAIL,
     USER_UPDATE_RESET,
     USER_DETAILS_RESET,
+    RESET_PASS_REQUEST,
+    RESET_PASS_SUCCESS,
+    RESET_PASS_FAIL,
 } from '../constants/userConstants'
 
 
@@ -128,5 +131,21 @@ export const userUpdateReducer = (state = {}, action) => {
       }
     default:
       return state
+  }
+}
+
+export const resetPassReducer = (state = {}, action) => {
+  switch (action.type) {
+      case RESET_PASS_REQUEST:
+          return { loading: true };
+      case RESET_PASS_SUCCESS:
+          return {
+              loading: false,
+              success: true
+          };
+      case RESET_PASS_FAIL:
+          return { loading: false, error: action.payload };
+      default:
+          return state;
   }
 }

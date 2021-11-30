@@ -26,10 +26,9 @@ import {
   RESET_PASS_REQUEST,
   RESET_PASS_SUCCESS,
   RESET_PASS_FAIL,
-
-
 } from "../constants/userConstants";
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
+import { CART_UPDATE_REQUEST } from "../constants/cartConstants"
 import axios from "axios";
 
 export const login = (email, password) => async (dispatch) => {

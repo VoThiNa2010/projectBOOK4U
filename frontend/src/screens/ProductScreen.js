@@ -14,12 +14,19 @@ import {
 import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-
+import * as CurrencyFormat from 'react-currency-format';
 import {
   listProductDetails,
   createProductReview,
 } from "../actions/productActions";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
+function formatCash(str) {
+ 	return str.split('').reverse().reduce((prev, next, index) => {
+ 		return ((index % 3) ? next : (next + ',')) + prev
+ 	})
+}
+
+
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
@@ -37,27 +44,34 @@ const ProductScreen = ({ history, match }) => {
     productReviewCreate;
 
   useEffect(() => {
-    if(successProductReview){
-      alert('Review Submitted!')
-      setRating(0)
-      setComment('')
-      dispatch({type: PRODUCT_CREATE_REVIEW_RESET})
+    if (successProductReview) {
+      alert("Review Submitted!");
+      setRating(0);
+      setComment("");
+      dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match, successProductReview]);
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
-  }
+  };
 
   const submitHandler = (e) => {
-    e.preventDefault()
-    dispatch(createProductReview(match.params.id,{
-      rating,
-      comment
-    }))
-  }
-  return (
+    e.preventDefault();
+    dispatch(
+      createProductReview(match.params.id, {
+        rating,
+        comment,
+      })
+    );
+  };
+  const formatter = new Intl.NumberFormat("vi-VN", {
+                style: "currency",
+                currency: "VND"
+            });
+  
+  return (   
     <>
       <Link className="btn btn-light my-3" to="/">
         Quay lại
@@ -78,7 +92,8 @@ const ProductScreen = ({ history, match }) => {
                   <Row>
                     <Col>Giá: </Col>
                     <Col>
-                      <strong>{product.price} VND</strong>
+                          <strong>formatter.format({product.price})</strong>
+                         
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -90,7 +105,7 @@ const ProductScreen = ({ history, match }) => {
                   />
                 </ListGroup.Item>
 
-                <ListGroup.Item>Gía: {product.price} VND</ListGroup.Item>
+                    <ListGroup.Item>Gía: {product.price}  </ListGroup.Item>
                 <ListGroup.Item>Mô tả: {product.description}</ListGroup.Item>
               </ListGroup>
             </Col>
@@ -101,7 +116,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Gía: </Col>
                       <Col>
-                        <strong>{product.price} VND</strong>
+                        <strong>formatter.format({product.price}) VND</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -156,7 +171,7 @@ const ProductScreen = ({ history, match }) => {
           <Row>
             <Col md={6}>
               <h2>Reviews</h2>
-             
+
               {product.reviews.length === 0 && <Message>No reviews</Message>}
               <ListGroup variant="flush">
                 {product.reviews.map((review) => (
@@ -169,36 +184,42 @@ const ProductScreen = ({ history, match }) => {
                 ))}
                 <ListGroup.Item>
                   <h2> Write a Customer Review</h2>
-                  {errorProductReview && <Message variant = 'danger'>{errorProductReview}</Message>}
+                  {errorProductReview && (
+                    <Message variant="danger">{errorProductReview}</Message>
+                  )}
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
-                    <Form.Group controlId = 'rating'>
-                      <Form.Label>Rating</Form.Label>
-                      <Form.Control as='select' value = {rating} onChange={(e)=>setRating(e.target.value)}>
-                      <option value = ''>Select...</option>
-                      <option value = '1'>1-</option>
-                      <option value = '2'>2-</option>
-                      <option value = '3'>3-</option>
-                      <option value = '4'>4-</option>
-                      <option value = '5'>5-</option>
-                      </Form.Control>
-                    </Form.Group>
-                    <Form.Group controlId = 'comment'>
-                    <Form.Label>Comment</Form.Label>
-                    <Form.Control 
-                    as = 'textarea'
-                    row = '3'
-                    value = {comment}
-                    onChange={(e) =>setComment(e.target.value)}>
-
-                    </Form.Control>
-                    <Button type = 'submit' variant = 'primary'>Submit</Button>
-                    </Form.Group>
-
+                      <Form.Group controlId="rating">
+                        <Form.Label>Rating</Form.Label>
+                        <Form.Control
+                          as="select"
+                          value={rating}
+                          onChange={(e) => setRating(e.target.value)}
+                        >
+                          <option value="">Select...</option>
+                          <option value="1">1-</option>
+                          <option value="2">2-</option>
+                          <option value="3">3-</option>
+                          <option value="4">4-</option>
+                          <option value="5">5-</option>
+                        </Form.Control>
+                      </Form.Group>
+                      <Form.Group controlId="comment">
+                        <Form.Label>Comment</Form.Label>
+                        <Form.Control
+                          as="textarea"
+                          row="3"
+                          value={comment}
+                          onChange={(e) => setComment(e.target.value)}
+                        ></Form.Control>
+                        <Button type="submit" variant="primary">
+                          Submit
+                        </Button>
+                      </Form.Group>
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to="/login">Sign In </Link> to write a review{' '}
+                      Please <Link to="/login">Sign In </Link> to write a review{" "}
                     </Message>
                   )}
                 </ListGroup.Item>

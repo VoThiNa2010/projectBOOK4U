@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import Rating from "./Rating";
 
 
-const Product = ({ product }) => {
+const ProductItem= ({ product }) => {
    const addDecimals = (num) => {
       return num.toLocaleString("it-IT", { style: "currency", currency: "VND" });
       
@@ -36,4 +36,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductItem;

@@ -88,6 +88,7 @@ export const orderListMyReducer = (
     case ORDER_LIST_MY_REQUEST:
       return {loading: true };
     case ORDER_LIST_MY_SUCCESS:
+      console.log(action.payload)
       return { loading: false, orders: action.payload };
 
     case ORDER_LIST_MY_FAIL:

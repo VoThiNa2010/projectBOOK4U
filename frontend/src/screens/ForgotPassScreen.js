@@ -15,12 +15,12 @@ import {
 } from "react-bootstrap";
 import Loader from "../components/Loader";
 function ForgotPassScreen() {
-  
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState(null);
-  const dispatch = useDispatch();
+  
   const resetPass = useSelector((state) => state.resetPass);
   const { loading, error, success } = resetPass
   

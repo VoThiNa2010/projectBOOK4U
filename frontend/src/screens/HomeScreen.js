@@ -4,6 +4,8 @@ import { Row, Col, Container, ListGroup, Carousel } from "react-bootstrap";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import ListCategory from "../components/ListCategory";
+import Advertisement from "../components/Advertisement";
 
 import { listProducts } from "../actions/productActions";
 
@@ -20,7 +22,8 @@ const HomeScreen = ({match}) => {
 
   return (
     <>
-     
+      <Advertisement/>
+     <ListCategory/>
       <h1>Danh sách sản phẩm</h1>
 
       {loading ? (

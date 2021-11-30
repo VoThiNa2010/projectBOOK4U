@@ -11,6 +11,7 @@ import userRoutes from "./routes/userRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js"
 import cartRoutes from './routes/cartRoutes.js'
+import categoryRoutes from './routes/categoryRoutes.js'
 
 dotenv.config()
 
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
   res.send("API is running...")
 })
 
+app.use('/api/category', categoryRoutes)
 app.use("/api/products", productRoutes)
 app.use("/api/users", userRoutes)
 app.use('/api/orders', orderRoutes)

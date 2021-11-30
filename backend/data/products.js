@@ -29,7 +29,7 @@ const products = [
     description:
       "Vật lý đại cương- học là qua môn, không học rướt môn ráng chịu",
     brand: "Đại học quốc gia",
-    category: "Sách đại cương",
+    category: "Khác",
     price: 29000,
     countInStock: 5,
     rating: 3,
@@ -41,7 +41,7 @@ const products = [
     description:
       "Kinh tế học đại cương- học là qua môn, không học rướt môn ráng chịu",
     brand: "Đại học quốc gia",
-    category: "Sách đại cương",
+    category: "Sách kĩ năng mềm",
     price: 48000,
     countInStock: 7,
     rating: 3.5,
@@ -53,7 +53,7 @@ const products = [
     description:
       "Pháp luật đại cương - học là qua môn, không học rướt môn ráng chịu",
     brand: "Đại học quốc gia ",
-    category: "Sách đại cương",
+    category: "TOEIC",
     price:39000,
     countInStock: 8,
     rating: 4,

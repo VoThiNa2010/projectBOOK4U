@@ -19,6 +19,8 @@ import ProductListScreen from "./screens/ProductListScreen"
 import  ProductEditScreen from './screens/ProductEditScreen'
 import  OrderListScreen from './screens/OrderListScreen'
 import ForgotPassScreen from "./screens/ForgotPassScreen"
+import ListCategory from "./components/ListCategory"
+import ListProductOfCategory from "./screens/ListProductOfCategory"
 const App = () => {
   return (
     <Router>
@@ -41,6 +43,8 @@ const App = () => {
           <Route path="/admin/orderlist" component={OrderListScreen} />
           <Route path='/search/:keyword' component={HomeScreen} />
           <Route path='/forgotpass' component={ForgotPassScreen} />
+          <Route path='/listcategory' component={ListCategory} />
+          <Route path = '/category/:pathName/list_product/' component={ListProductOfCategory} />
           <Route path="/" component={HomeScreen} exact />
         </Container>
       </main>

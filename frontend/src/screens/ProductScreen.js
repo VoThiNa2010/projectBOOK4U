@@ -14,18 +14,11 @@ import {
 import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import * as CurrencyFormat from 'react-currency-format';
 import {
   listProductDetails,
   createProductReview,
 } from "../actions/productActions";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
-function formatCash(str) {
- 	return str.split('').reverse().reduce((prev, next, index) => {
- 		return ((index % 3) ? next : (next + ',')) + prev
- 	})
-}
-
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -66,12 +59,9 @@ const ProductScreen = ({ history, match }) => {
       })
     );
   };
-  const formatter = new Intl.NumberFormat("vi-VN", {
-                style: "currency",
-                currency: "VND"
-            });
-  
-  return (   
+
+
+  return (
     <>
       <Link className="btn btn-light my-3" to="/">
         Quay lại
@@ -92,8 +82,7 @@ const ProductScreen = ({ history, match }) => {
                   <Row>
                     <Col>Giá: </Col>
                     <Col>
-                          <strong>formatter.format({product.price})</strong>
-                         
+                          <strong>{product.price}</strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -105,7 +94,7 @@ const ProductScreen = ({ history, match }) => {
                   />
                 </ListGroup.Item>
 
-                    <ListGroup.Item>Gía: {product.price}  </ListGroup.Item>
+                <ListGroup.Item>Gía: {product.price} </ListGroup.Item>
                 <ListGroup.Item>Mô tả: {product.description}</ListGroup.Item>
               </ListGroup>
             </Col>

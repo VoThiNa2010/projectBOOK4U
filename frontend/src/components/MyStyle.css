@@ -1,45 +1,99 @@
 .contact {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 .fa-facebook-f {
-    color: #fff;
-    padding: 8px 8px;
-    border-radius: 10px;
-    height: 32px;
-    width: 32px;
-    display: flex;
-    justify-content: center;
+  color: #fff;
+  padding: 8px 8px;
+  border-radius: 10px;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
 }
 
 .fa-instagram {
-    color: #fff;
-    padding: 8px 8px;
-    border-radius: 10px;
-    height: 32px;
-    width: 32px;
-    display: flex;
-    justify-content: center;
-    margin: 0px 5px;
+  color: #fff;
+  padding: 8px 8px;
+  border-radius: 10px;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  margin: 0px 5px;
 }
 
 .fa-github {
-    color: #fff;
-    padding: 8px 8px;
-    border-radius: 10px;
-    height: 32px;
-    width: 32px;
-    display: flex;
-    justify-content: center;
+  color: #fff;
+  padding: 8px 8px;
+  border-radius: 10px;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
 }
 .copyright {
-    background-color: rgba(42, 110, 236, 0.2);
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    cursor: pointer;
+  background-color: rgba(42, 110, 236, 0.2);
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  cursor: pointer;
+}
+
+/*******/
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.brand-image {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+}
+.brand-name {
+  font-size: 15px;
+  color: #fa4b06;
+  cursor: pointer;
+}
+.brand-overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#brand-list {
+  width: 80%;
+  margin-top: 50px;
+  padding: 50px 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.best-sale {
+  height: max-content;
+  left: 0px;
+  top: -5px;
+}
+
+.best-sale-container {
+  height: 70%;
+  background-color: rgb(255, 177, 65);
+}
+
+.qc {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

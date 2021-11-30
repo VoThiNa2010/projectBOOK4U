@@ -52,7 +52,6 @@ export const listProductsOfCategory = (pathName) => async (dispatch) => {
   }
 };
 
-
 export const addNewCategory =
   (categoryName, pathName) => async (dispatch, getState) => {
     try {
@@ -69,11 +68,7 @@ export const addNewCategory =
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
-      await axios.post(
-        "/api/brands/add",
-        { categoryName, pathName },
-        config
-      );
+      await axios.post("/api/category/add", { categoryName, pathName }, config);
 
       dispatch({
         type: CREATE_CATEGORY_SUCCESS,
@@ -89,32 +84,34 @@ export const addNewCategory =
     }
   };
 
-export const deleteCategory = (categoryPathName) => async (dispatch, getState) => {
-  try {
-    dispatch({
-      type: DELETE_CATEGORY_REQUEST,
-    });
-    const {
-      userLogin: { userInfo },
-    } = getState();
+export const deleteCategory =
+  (categoryPathName) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: DELETE_CATEGORY_REQUEST,
+      });
+      const {
+        userLogin: { userInfo },
+      } = getState();
 
-    const config = {
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
 
-    await axios.delete(`/api/category/${categoryPathName}`, config)
-    dispatch({
-      type: DELETE_CATEGORY_SUCCESS
-    })
-  } catch (error) {
-    dispatch({
-      type: DELETE_CATEGORY_FAIL,
-      payload: error.response && error.response.data.message
-      ? error.response.data.message
-      : error.message,
-    })
-  }
-};
+      await axios.delete(`/api/category/${categoryPathName}`, config);
+      dispatch({
+        type: DELETE_CATEGORY_SUCCESS,
+      });
+    } catch (error) {
+      dispatch({
+        type: DELETE_CATEGORY_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
-import { listProductDetails, updateProduct } from "../actions/productActions";
+import {createProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 
 function ProductEditScreen ({ match, history }) {
@@ -22,34 +22,11 @@ function ProductEditScreen ({ match, history }) {
 
   const dispatch = useDispatch();
 
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
-
-  const productUpdate = useSelector((state) => state.productUpdate);
-  const {
-    loading: loadingUpdate,
-    error: errorUpdate,
-    success: successUpdate,
-  } = productUpdate;
+ 
 
   useEffect(() => {
-    if (successUpdate) {
-      dispatch({ type: PRODUCT_UPDATE_RESET });
-      history.push("/admin/productlist");
-    } else {
-      if (!product.name || product._id !== productId) {
-        dispatch(listProductDetails(productId));
-      } else {
-        setName(product.name);
-        setPrice(product.email);
-        setImage(product.image);
-        setBrand(product.brand);
-        setCategory(product.category);
-        setCountInStock(product.countInSock);
-        setDescription(product.description);
-      }
-    }
-  }, [dispatch, history, product, successUpdate]);
+    
+  }, [dispatch, history]);
   
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
@@ -72,11 +49,12 @@ function ProductEditScreen ({ match, history }) {
       setUploading(false);
     }
   };
-  console.log("match");
+ 
   const submitHandler = (e) => {
+    console.log("huhukk")
     e.preventDefault();
     dispatch(
-      updateProduct({
+      createProduct({
         _id: productId,
         name,
         price,
@@ -91,18 +69,8 @@ function ProductEditScreen ({ match, history }) {
   console.log("match 2");
   return (
     <>
-      <Link to="/admin/productList" className="btn btn-light my-3">
-        Quay lại
-      </Link>
       <FormContainer>
         <h1>Thêm sản phẩm/ Chỉnh sửa sản phẩm</h1>
-        {loadingUpdate && <Loader />}
-        {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
               <Form.Label>Tên</Form.Label>
@@ -192,7 +160,6 @@ function ProductEditScreen ({ match, history }) {
               Cập nhật
             </Button>
           </Form>
-        )}
       </FormContainer>
     </>
   );

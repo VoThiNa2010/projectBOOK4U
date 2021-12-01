@@ -60,7 +60,6 @@ const OrderScreen = ({ match }) => {
   }, [dispatch, orderId, successPay, order]);
 
   const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
   };
 
@@ -188,6 +187,15 @@ const OrderScreen = ({ match }) => {
                     />
                   )}
                 </ListGroup.Item>
+              )}
+              {order.paymentMethod === "Trực tiếp" && (
+                <Message variant="success">
+                  <div style={{ width: "100%" }}>
+                    <p style={{ textAlign: "center" }}>
+                      PLEASE PAY FOR RECEPTIONIST
+                    </p>
+                  </div>
+                </Message>
               )}
             </ListGroup>
           </Card>

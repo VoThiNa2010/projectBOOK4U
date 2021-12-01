@@ -80,7 +80,7 @@ const AdminScreen = ({ history }) => {
                                                 {categories.map(category => (
                                                     <tr key={category._id}>
                                                         <td>{category._id}</td>
-                                                        <td><Link to={`/admin/cate/${category.pathName}`}>{category.categoryName}</Link></td>
+                                                        <td><Link to={`/admin/product/${category.pathName}`}>{category.categoryName}</Link></td>
                                                         <td>
                                                             <Button type='button' variant='light' onClick={() => removeBrandHandler(category.pathName)}><i className='fas fa-trash'></i></Button>
                                                         </td>

@@ -8,6 +8,7 @@ import {
   productCreateReducer,
   productUpdateReducer,
   productReviewCreateReducer,
+  addOneProductReducer,
 } from "./reducers/productReducers";
 import {
   addOneCategoryReducer,
@@ -44,7 +45,7 @@ const reducer = combineReducers({
   productListOfCategory: productsListOfCategoryReducers,
   addOneCategory: addOneCategoryReducer,
   deleteOneCategory: deleteOneCategoryReducer,
-
+  addOneProduct: addOneProductReducer,
   productList: productListReducer,
   productDetails: productDetailsReducer,
   productDelete: productDeleteReducer,

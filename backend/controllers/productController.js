@@ -6,14 +6,16 @@ import Product from "../models/productModel.js";
 // @ access Public
 
 const getProducts = asyncHandler(async (req, res) => {
-  const keyword = req.query.keyword?{
-  name: {
-    $regex: req.query.keyword,
-    $options: 'i'
-  }
-}: {}
-const products = await Product.find({...keyword})
-res.json(products)
+  const keyword = req.query.keyword
+    ? {
+        name: {
+          $regex: req.query.keyword,
+          $options: "i",
+        },
+      }
+    : {};
+  const products = await Product.find({ ...keyword });
+  res.json(products);
 });
 // @desc Fetch single products
 // @route GET/api/products /:id
@@ -65,28 +67,24 @@ const createProduct = asyncHandler(async (req, res) => {
 
   const createProduct = await product.save();
   res.status(201).json(createProduct);
-});
+ 
+  } )
+
 
 // @desc Update a product
 // @route PUT/api/products/:id
 // @ access Private/Admin
-
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, price, description, image, brand, category, countInStock } =
-    req.body;
-
   const product = await Product.findById(req.params.id);
   if (product) {
-    product.name = name;
-    product.price = price;
-    product.description = description;
-    product.image = image;
-    product.brand = brand;
-    product.category = category;
-    product.countInStock = countInStock;
-
-    const updatedProduct = await product.save();
-    res.json(updatedProduct);
+    product.name = req.body.name || product.name;
+    product.image = req.body.image || product.image;
+    product.description = req.body.description || product.description;
+    product.price = req.body.price || product.price;
+    product.countInStock = req.body.countInStock || product.countInStock;
+    product.brandName = req.body.brandName || product.brandName;
+    const updProduct = await product.save();
+    res.json(updProduct);
   } else {
     res.status(404);
     throw new Error("Product not found");
@@ -119,7 +117,7 @@ const createProductReview = asyncHandler(async (req, res) => {
     product.numReviews = product.reviews.length;
     product.rating =
       product.reviews.reduce((acc, item) => item.rating + acc, 0) /
-      product.reviews.length
+      product.reviews.length;
     await product.save();
     res.status(201).json({ message: "Review added" });
   } else {

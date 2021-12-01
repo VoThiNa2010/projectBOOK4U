@@ -36,6 +36,7 @@ const productSchema = mongoose.Schema({
         required: true,
         
     },
+    pathCategory:{type: String, required: true},
     description:{
         type: String,
         required: true,

@@ -5,6 +5,8 @@ import {
   getCategory,
   getCategoryByPathName,
   getProductListByPathname,
+  addNewProduct,
+  //deleteProductByPathName,
 } from "../controllers/categoryController.js";
 import { protect, admin } from "../middleware/authMiddleware.js";
 const router = express.Router();
@@ -19,5 +21,12 @@ router
 router.route("/getproducts/:pathName").get(getProductListByPathname);
 
 router.route("/add").post(protect, admin, addCategory);
+
+router.route("/addProduct").post(protect, admin, addNewProduct);
+
+router
+  .route("/deleteProduct/:pathName")
+  //.delete(protect, admin, deleteProductByPathName);
+
 
 export default router;

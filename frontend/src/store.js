@@ -8,13 +8,14 @@ import {
   productCreateReducer,
   productUpdateReducer,
   productReviewCreateReducer,
-  addOneProductReducer,
 } from "./reducers/productReducers";
 import {
   addOneCategoryReducer,
   categoryListReducers,
   deleteOneCategoryReducer,
   productsListOfCategoryReducers,
+  addOneProductReducer,
+  deleteOneProductReducer
 } from "./reducers/categoryReducers";
 import {
   cartReducer,
@@ -46,6 +47,7 @@ const reducer = combineReducers({
   addOneCategory: addOneCategoryReducer,
   deleteOneCategory: deleteOneCategoryReducer,
   addOneProduct: addOneProductReducer,
+  deleteOneProduct: deleteOneProductReducer,
   productList: productListReducer,
   productDetails: productDetailsReducer,
   productDelete: productDeleteReducer,

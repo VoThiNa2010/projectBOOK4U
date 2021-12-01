@@ -9,6 +9,9 @@ import {
   CREATE_CATEGORY_FAIL,
   CREATE_CATEGORY_REQUEST,
   CREATE_CATEGORY_SUCCESS,
+  CREATE_PRODUCT_FAIL,
+  CREATE_PRODUCT_REQUEST,
+  CREATE_PRODUCT_SUCCESS,
   DELETE_CATEGORY_FAIL,
   DELETE_CATEGORY_REQUEST,
   DELETE_CATEGORY_SUCCESS,
@@ -37,9 +40,8 @@ export const listProductsOfCategory = (pathName) => async (dispatch) => {
   try {
     dispatch({ type: CATEGORY_LIST_PRODUCTS_REQUEST });
     const { data } = await axios.get(`/api/category/getproducts/${pathName}`);
-    console.log("***",data)
+    console.log("***", data);
     dispatch({
-      
       type: CATEGORY_LIST_PRODUCTS_SUCCESS,
       payload: data,
     });
@@ -110,6 +112,61 @@ export const deleteCategory =
     } catch (error) {
       dispatch({
         type: DELETE_CATEGORY_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
+
+export const addNewProduct =
+  (
+    name,
+    brand,
+    category,
+    pathCategory,
+    description,
+    price,
+    countInStock,
+    image
+  ) =>
+  async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: CREATE_PRODUCT_REQUEST,
+      });
+      const {
+        userLogin: { userInfo },
+      } = getState();
+
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+      await axios.post(
+        "/api/category/addProduct",
+        {
+          name,
+          brand,
+          category,
+          pathCategory,
+          description,
+          price,
+          countInStock,
+          image,
+        },
+        config
+      );
+
+      dispatch({
+        type: CREATE_PRODUCT_SUCCESS,
+      });
+    } catch (error) {
+      dispatch({
+        type: CREATE_PRODUCT_FAIL,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message

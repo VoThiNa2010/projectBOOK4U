@@ -12,7 +12,11 @@ import {
   DELETE_CATEGORY_REQUEST,
   DELETE_CATEGORY_SUCCESS,
   DELETE_CATEGORY_FAIL,
+  CREATE_PRODUCT_REQUEST,
+  CREATE_PRODUCT_SUCCESS,
+  CREATE_PRODUCT_FAIL,
 } from "../constants/categoryConstants";
+import { DELETE_PRODUCT_FAIL, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS } from "../constants/productConstants";
 
 export const categoryListReducers = (state = { categories: [] }, action) => {
   switch (action.type) {
@@ -65,6 +69,34 @@ export const deleteOneCategoryReducer = (state = {}, action) => {
     case DELETE_CATEGORY_SUCCESS:
       return { loading: false, success: true }
     case DELETE_CATEGORY_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}
+
+
+export const addOneProductReducer = (state ={}, action) => {
+  switch (action.type) {
+    case CREATE_PRODUCT_REQUEST:
+      return { loading: true }
+    case CREATE_PRODUCT_SUCCESS:
+      return { loading: false, success: true }
+    case CREATE_PRODUCT_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}
+
+
+export const deleteOneProductReducer = (state = {}, action) => {
+  switch(action.type) {
+    case DELETE_PRODUCT_REQUEST:
+      return { loading: true }
+    case DELETE_PRODUCT_SUCCESS:
+      return { loading: false, success: true }
+    case DELETE_PRODUCT_FAIL:
       return { loading: false, error: action.payload }
     default:
       return state

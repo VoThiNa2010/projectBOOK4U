@@ -33,14 +33,14 @@ const AdminScreen = ({ match }) => {
           <div className="admin-categ">
             <div className="admin-categ-header">
               <button type="button" className="add-brand-btn">
-                <Link to={`/admin/category`}>Back </Link>
+                <Link to={`/admin/category`}>Quay lại </Link>
               </button>
 
               <h2>{/*`Products of Category ${match.params.pathname}`*/}</h2>
 
               <button type="button" className="add-brand-btn">
                 <Link to={`/admin/add/product/${match.params.pathname}`}>
-                  Add Product +{" "}
+                  Thêm sản phẩm 
                 </Link>
               </button>
             </div>
@@ -52,11 +52,11 @@ const AdminScreen = ({ match }) => {
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Name Product</th>
-                      <th>Price</th>
-                      <th>Count In Stock</th>
-                      <th>Edit</th>
-                      <th>Delete</th>
+                      <th>Tên sản phẩm</th>
+                      <th>Giá</th>
+                      <th>Số lượng tồn kho</th>
+                      <th>Chỉnh sửa</th>
+                      <th>Xóa</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -83,7 +83,7 @@ const LoginScreen = ({ location, history }) => {
       </Row>
       <Row>
         <Col>
-          Forgot password? <Link to={`/forgotpass`}>Reset it</Link>
+          Quên mật khẩu? <Link to={`/forgotpass`}>Đặt lại mật khẩu</Link>
         </Col>
       </Row>
     </FormContainer>

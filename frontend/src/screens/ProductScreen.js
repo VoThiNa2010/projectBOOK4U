@@ -90,11 +90,11 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup.Item>
                   <Rating
                     value={product.rating}
-                    text={`${product.numReviews} reviews`}
+                    text={`${product.numReviews} bình luận`}
                   />
                 </ListGroup.Item>
 
-                <ListGroup.Item>Gía: {product.price} </ListGroup.Item>
+                <ListGroup.Item>Giá: {product.price} </ListGroup.Item>
                 <ListGroup.Item>Mô tả: {product.description}</ListGroup.Item>
               </ListGroup>
             </Col>
@@ -103,7 +103,7 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup variant="flush">
                   <ListGroup.Item>
                     <Row>
-                      <Col>Gía: </Col>
+                      <Col>Giá: </Col>
                       <Col>
                         <strong>formatter.format({product.price}) VND</strong>
                       </Col>
@@ -150,7 +150,7 @@ const ProductScreen = ({ history, match }) => {
                       type="button"
                       disabled={product.countInStock === 0}
                     >
-                      Add To Cart
+                      Thêm vào giỏ hàng
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
@@ -159,9 +159,9 @@ const ProductScreen = ({ history, match }) => {
           </Row>
           <Row>
             <Col md={6}>
-              <h2>Reviews</h2>
+              <h2>Bình luận</h2>
 
-              {product.reviews.length === 0 && <Message>No reviews</Message>}
+              {product.reviews.length === 0 && <Message>Hiện chưa có bình luận nào!</Message>}
               <ListGroup variant="flush">
                 {product.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
@@ -172,14 +172,14 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>
-                  <h2> Write a Customer Review</h2>
+                  <h2> Đánh giá sản phẩm</h2>
                   {errorProductReview && (
                     <Message variant="danger">{errorProductReview}</Message>
                   )}
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group controlId="rating">
-                        <Form.Label>Rating</Form.Label>
+                        <Form.Label>Đánh giá</Form.Label>
                         <Form.Control
                           as="select"
                           value={rating}
@@ -194,7 +194,7 @@ const ProductScreen = ({ history, match }) => {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group controlId="comment">
-                        <Form.Label>Comment</Form.Label>
+                        <Form.Label>Bình luận</Form.Label>
                         <Form.Control
                           as="textarea"
                           row="3"
@@ -202,13 +202,13 @@ const ProductScreen = ({ history, match }) => {
                           onChange={(e) => setComment(e.target.value)}
                         ></Form.Control>
                         <Button type="submit" variant="primary">
-                          Submit
+                          Gửi
                         </Button>
                       </Form.Group>
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to="/login">Sign In </Link> to write a review{" "}
+                      <Link to="/login"> Đăng nhập </Link> để đánh giá sản phẩm{" "}
                     </Message>
                   )}
                 </ListGroup.Item>

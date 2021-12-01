@@ -83,35 +83,35 @@ const EditProductScreen = ({ history, match }) => {
   return (
     loadingPr ? <></> :
       <FormContainer>
-        <h1>Edit Product </h1>
+        <h1>Chỉnh sửa thông tin sản phẩm </h1>
         {error && <Message variant="danger">{error} </Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="text">
-            <Form.Label> Product Name </Form.Label>
+            <Form.Label> Tên sản phẩm </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter brand name"
+              placeholder="Nhập tên sản phẩm"
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>
           </Form.Group>
           <br></br>
           <Form.Group controlId="text">
-            <Form.Label>Description</Form.Label>
+            <Form.Label>Mô tả</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Description for product"
+              placeholder="Nhập mô tả cho sản phẩm"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             ></Form.Control>
           </Form.Group>
           <br></br>
           <Form.Group controlId="Image">
-            <Form.Label> Image URL </Form.Label>
+            <Form.Label> Ảnh </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter image url"
+              placeholder="Nhập URL ảnh"
               value={image}
               onChange={(e) => setImage(e.target.value)}
             ></Form.Control>
@@ -124,27 +124,27 @@ const EditProductScreen = ({ history, match }) => {
           <br></br>
 
           <Form.Group controlId="text">
-            <Form.Label> Price </Form.Label>
+            <Form.Label> Giá sản phẩm </Form.Label>
             <Form.Control
               type="number"
-              placeholder="Enter Price"
+              placeholder="Nhập giá"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             ></Form.Control>
           </Form.Group>
           <br></br>
           <Form.Group controlId="text">
-            <Form.Label>Count In Stock </Form.Label>
+            <Form.Label>Số lượng tồn kho </Form.Label>
             <Form.Control
               type="number"
-              placeholder="Enter Count In Stock"
+              placeholder="Nhập số lượng tồn kho"
               value={countInStock}
               onChange={(e) => setCountInStock(e.target.value)}
             ></Form.Control>
           </Form.Group>
           <br></br>
           <Button type="submit" variant="primary">
-            Confirm
+            Xác nhận
           </Button>
         </Form>
       </FormContainer>

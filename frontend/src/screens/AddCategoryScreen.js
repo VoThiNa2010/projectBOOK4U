@@ -43,30 +43,30 @@ const AddCategoryScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Add Category</h1>
+      <h1>Thêm danh mục</h1>
       {error && <Message variant="danger">{error} </Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="email">
-          <Form.Label> Category Name </Form.Label>
+          <Form.Label> Tên </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter category name"
+            placeholder="Nhập tên danh mục"
             onChange={(e) => setCategoryName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId="email">
-          <Form.Label> Category pathName </Form.Label>
+          <Form.Label> Đường dẫn </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter pathcategory name"
+            placeholder="Nhập đường dẫn cho danh mục"
             onChange={(e) => setPathName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Button type="submit" variant="primary">
-          Confirm
+          Xác nhận
         </Button>
       </Form>
     </FormContainer>

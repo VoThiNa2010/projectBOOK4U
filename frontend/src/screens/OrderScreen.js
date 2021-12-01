@@ -52,7 +52,7 @@ const OrderScreen = ({ match }) => {
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
-        addPayPalScript();
+        if (order.paymentMethod === 'Paypal') addPayPalScript();
       } else {
         setStkReady(true);
       }
@@ -175,7 +175,7 @@ const OrderScreen = ({ match }) => {
                   <Col>{order.totalPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
-              {!order.isPaid && (
+              {order.paymentMethod === 'Paypal' && !order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
                   {!stkReady ? (

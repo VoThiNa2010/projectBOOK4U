@@ -600,7 +600,7 @@ const products = [
   },
   {
     name: "Ngắn mạch và đứt dây trong hệ thống điện",
-    image: "/images/cn18.jpg",
+    image: "/images/cn18.png",
     description:
       "Tìm hiểu về các sự cố và cách giải quyết đối với các hệ thống điện",
     brand: "Đại học quốc gia ",
@@ -613,7 +613,7 @@ const products = [
   },
   {
     name: "Electrical and Mechanical Engineering",
-    image: "/images/cn19.png",
+    image: "/images/cn19.jpg",
     description:
       "Kĩ thuật Điện và Cơ khí",
     brand: "Đại học quốc gia ",
@@ -626,7 +626,7 @@ const products = [
   },
   {
     name: "Sổ tay chuyên ngành cơ khí",
-    image: "/images/cn20.png",
+    image: "/images/cn20.jpg",
     description:
       "Toàn bộ các thuật ngữ chuyên ngành cơ khí được thể hiện một cách rõ ràng, logic trong quyển sách này",
     brand: "Đại học quốc gia ",

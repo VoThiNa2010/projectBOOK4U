@@ -73,7 +73,7 @@ const OrderScreen = ({ match }) => {
             <ListGroup.Item>
               <h2> Hóa đơn </h2>
               <p>
-                <strong>Tên: </strong> {order.user.name}
+               <strong>Tên: </strong> {order.user.name}
               </p>
               <p>
                 <strong>Email: </strong>{" "}

@@ -75,7 +75,7 @@ const LoginScreen = ({ location, history }) => {
         <Col>
           Chưa có tài khoản?{"  "}
           <Link
-            to={redirect ? `/register?redirect = ${redirect}` : "/register"}
+            to={redirect ? `/register?redirect=${redirect}` : "/register"}
           >
             Đăng ký
           </Link>

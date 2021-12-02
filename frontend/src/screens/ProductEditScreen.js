@@ -71,7 +71,7 @@ function ProductEditScreen ({ match, history }) {
     <>
       <FormContainer>
         <h1>Thêm sản phẩm/ Chỉnh sửa sản phẩm</h1>
-          <Form onSubmit={submitHandler}>
+          <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column"}}>
             <Form.Group controlId="name">
               <Form.Label>Tên</Form.Label>
               <Form.Control
@@ -156,7 +156,7 @@ function ProductEditScreen ({ match, history }) {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button type="submit" variant="primary" style={{alignSelf:"center"}}>
               Cập nhật
             </Button>
           </Form>

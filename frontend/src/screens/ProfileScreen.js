@@ -64,8 +64,8 @@ const ProfileScreen = ({ history }) => {
         )}
         {loading && <Loader />}
 
-        <Form onSubmit={submitHandler}>
-          <Form.Label>{user.isAdmin ? "Quyền admin" :""}</Form.Label>
+        <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column" }}>
+          <Form.Label>{user.isAdmin ? "" :""}</Form.Label>
           <Form.Group controlId="name">
             <Form.Label>Tên người dùng</Form.Label>
             <Form.Control
@@ -106,7 +106,7 @@ const ProfileScreen = ({ history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type="submit" variant="primary">
+          <Button type="submit" variant="primary" style={{ alignSelf: "center", marginTop: "16px" }}>
             Cập nhật
           </Button>
         </Form>

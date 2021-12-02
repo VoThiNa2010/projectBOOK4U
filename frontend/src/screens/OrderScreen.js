@@ -49,7 +49,7 @@ const OrderScreen = ({ match }) => {
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
-        addPayPalScript();
+        if (order.paymentMethod === 'Paypal') addPayPalScript();
       } else {
         setStkReady(true);
       }
@@ -58,7 +58,6 @@ const OrderScreen = ({ match }) => {
 
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(orderId, paymentResult));
-
   };
 
   return loading ? (
@@ -173,17 +172,27 @@ const OrderScreen = ({ match }) => {
                   <Col>{order.totalPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
-                {!order.isPaid && (order.paymentMethod === "PayPal")&& (
+              {order.paymentMethod === 'Paypal' && !order.isPaid && (
                 <ListGroup.Item>
-                  {loadingPay && <Loader/> }
-                  {!stkReady ? <Loader/> : (
-                    <PayPalButton amount={(parseInt(order.totalPrice / 23000))}
-                    onSuccess={successPaymentHandler}/>
+                  {loadingPay && <Loader />}
+                  {!stkReady ? (
+                    <Loader />
+                  ) : (
+                    <PayPalButton
+                      amount={order.totalPrice}
+                      onSuccess={successPaymentHandler}
+                    />
                   )}
                 </ListGroup.Item>
               )}
               {order.paymentMethod === "Trực tiếp" && (
-                <Message variant = 'success' ><div style={{width:"100%"}}><p style={{textAlign:"center"}}>PLEASE PAY FOR RECEPTIONIST</p></div></Message>
+                <Message variant="success">
+                  <div style={{ width: "100%" }}>
+                    <p style={{ textAlign: "center" }}>
+                      PLEASE PAY FOR RECEPTIONIST
+                    </p>
+                  </div>
+                </Message>
               )}
             </ListGroup>
           </Card>

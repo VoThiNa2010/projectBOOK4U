@@ -44,7 +44,7 @@ const LoginScreen = ({ location, history }) => {
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
 
-      <Form onSubmit={submitHandler}>
+      <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column" }}>
         <Form.Group controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -65,7 +65,7 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
         <>
-          <Button type="submit" variant="primary">
+          <Button type="submit" variant="primary" style={{alignSelf:"center", marginTop: "16px"}}>
             Đăng nhập
           </Button>
         </>

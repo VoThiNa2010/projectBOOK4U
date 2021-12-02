@@ -43,7 +43,7 @@ const RegisterScreen = ({ location, history }) => {
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
 
-      <Form onSubmit={submitHandler}>
+      <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column"}}>
         <Form.Group controlId="name">
           <Form.Label>Tên</Form.Label>
           <Form.Control
@@ -84,7 +84,7 @@ const RegisterScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" style={{alignSelf:"center",marginTop: "16px"}}>
           Đăng ký
         </Button>
       </Form>

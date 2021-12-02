@@ -21,7 +21,7 @@ const OrderScreen = ({ match }) => {
 
   const orderPay = useSelector((state) => state.orderPay);
   const { loading: loadingPay, success: successPay } = orderPay;
-
+  console.log("orderpay",orderPay);
   if (!loading) {
     const addDecimals = (num) => {
      return (Math.round(num * 100) / 100).toFixed(0);

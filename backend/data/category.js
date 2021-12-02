@@ -12,8 +12,12 @@ const categories = [
     pathName: "kinang",
   },
   {
-    categoryName: "TOEIC",
-    pathName: "toeic",
+    categoryName: "Đề thi mẫu",
+    pathName: "dethi",
+  },
+    {
+    categoryName: "Ngoại ngữ",
+    pathName: "ngoaingu",
   },
   {
     categoryName: "Khác",

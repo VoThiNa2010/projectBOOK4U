@@ -526,7 +526,7 @@ const products = [
     description:
       "Đam mê tiếng Nhật thì ngại gì không tậu em này về, học bao phê nhé!",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 90000,
     countInStock: 10,
@@ -539,7 +539,7 @@ const products = [
     description:
       "Luyện viết Katakana? Hãy để quyển sách này giúp bạn.",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 50000,
     countInStock: 10,
@@ -552,7 +552,7 @@ const products = [
     description:
       "Nghe tiếng Nhật sẽ không còn là vấn đề nếu bạn sở hữu quyển sách này!",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 50000,
     countInStock: 10,
@@ -565,7 +565,7 @@ const products = [
     description:
       "Cùng nhau học tiếng Nhật nhé",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 90000,
     countInStock: 10,
@@ -578,7 +578,7 @@ const products = [
     description:
       "Quyển sách gói đầu nằm đối với bất kì ai muốn thông thạo tiếng Nhật",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 90000,
     countInStock: 10,
@@ -591,7 +591,7 @@ const products = [
     description:
       "Chuẩn bị kĩ càng cho kì thi IELTS đang tới",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 90000,
     countInStock: 10,
@@ -604,7 +604,7 @@ const products = [
     description:
       "Tổng kết ngữ pháp hay dùng trong bài thi IELTS",
     brand: "Cambridge",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 120000,
     countInStock: 10,
@@ -617,7 +617,7 @@ const products = [
     description:
       "Cùng nhau giải một vài đề để làm quen với cấu trúc đề thi IELTS",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 90000,
     countInStock: 10,
@@ -630,7 +630,7 @@ const products = [
     description:
       "Từ 3.5 lên 4.5 chỉ bằng một quyển sách",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 100000,
     countInStock: 10,
@@ -643,7 +643,7 @@ const products = [
     description:
       "Giúp bạn nâng band từ 6.5 lên 7.5 nhanh chóng",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 150000,
     countInStock: 10,
@@ -656,7 +656,7 @@ const products = [
     description:
       "Hướng dẫn bạn đạt kết quả cao cho kì thi TOEFL",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 100000,
     countInStock: 10,
@@ -669,7 +669,7 @@ const products = [
     description:
       "Bí quyết chinh phục TOEFL",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 150000,
     countInStock: 10,
@@ -682,7 +682,7 @@ const products = [
     description:
       "Biến TOEFL trở thành trò chơi? Chỉ cần xem quyển sách này",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 150000,
     countInStock: 10,
@@ -695,7 +695,7 @@ const products = [
     description:
       "Cùng thầy Barron chinh phục TOEFL",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 150000,
     countInStock: 10,
@@ -708,7 +708,7 @@ const products = [
     description:
       "Chinh phụ TOEFL",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 150000,
     countInStock: 10,
@@ -721,7 +721,7 @@ const products = [
     description:
       "Phân tích, mổ xẻ đề thì TOEIC",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 80000,
     countInStock: 10,
@@ -734,7 +734,7 @@ const products = [
     description:
       "800 câu hỏi từ vựng TOEIC nâng cao",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 100000,
     countInStock: 10,
@@ -747,7 +747,7 @@ const products = [
     description:
       "Cùng thầy Barron chinh phục TOEIC",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 70000,
     countInStock: 10,
@@ -760,7 +760,7 @@ const products = [
     description:
       "Sẵn sàng cho từ vựng TOEIC",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 70000,
     countInStock: 10,
@@ -773,7 +773,7 @@ const products = [
     description:
       "Kiểm tra từ vựng trước kì thi TOEIC",
     brand: "Đại học quốc gia ",
-    category: "Sách Ngoại ngữ",
+    category: "Ngoại ngữ",
     pathCategory: "ngoaingu",
     price: 60000,
     countInStock: 10,
@@ -786,7 +786,7 @@ const products = [
     description:
       "Học sâu về ô tô và xe máy, đây là lựa chọn hàng đầu của bạn",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 60000,
     countInStock: 10,
@@ -799,7 +799,7 @@ const products = [
     description:
       "Lạc vào thế giới của trí thông minh robot",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 89000,
     countInStock: 10,
@@ -812,7 +812,7 @@ const products = [
     description:
       "Quyển sách trình bày những kiến thức căn bản về Khoa học Máy tính",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 72000,
     countInStock: 10,
@@ -825,7 +825,7 @@ const products = [
     description:
       "Cùng nhau học về từ vựng chuyên ngành về Khoa học Máy tính",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 50000,
     countInStock: 10,
@@ -838,7 +838,7 @@ const products = [
     description:
       "Sự liên hệ mật thiết giữa máy tính - bộ não và lời giải thích của các nhà khoa học",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 75000,
     countInStock: 10,
@@ -851,7 +851,7 @@ const products = [
     description:
       "Sách gói đầu nằm của các sinh viên Y khoa",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 150000,
     countInStock: 10,
@@ -864,7 +864,7 @@ const products = [
     description:
       "Ngôn ngữ của thuốc",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 60000,
     countInStock: 10,
@@ -877,7 +877,7 @@ const products = [
     description:
       "Chọn phương pháp điều trị hợp lý",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 60000,
     countInStock: 10,
@@ -890,7 +890,7 @@ const products = [
     description:
       "Từ ngữ chuyên ngành Y khoa torng tiếng Anh và tiếng Việt",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 49000,
     countInStock: 10,
@@ -903,7 +903,7 @@ const products = [
     description:
       "Nắm vững các từ vựng y khoa hay gặp trong tiếng Anh",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 100000,
     countInStock: 10,
@@ -916,7 +916,7 @@ const products = [
     description:
       "Sách gói đầu nằm cho sinh viên kinh tế",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 180000,
     countInStock: 10,
@@ -929,7 +929,7 @@ const products = [
     description:
       "Học kinh tế mà không có sách này là sai lầm đó nha",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 90000,
     countInStock: 10,
@@ -942,7 +942,7 @@ const products = [
     description:
       "Học kinh tế mà không có sách này là sai lầm đó nha",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 180000,
     countInStock: 10,
@@ -955,7 +955,7 @@ const products = [
     description:
       "Sách gói đầu nằm cho sinh viên kinh tế",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 180000,
     countInStock: 10,
@@ -968,7 +968,7 @@ const products = [
     description:
       "Tổng quan về ngành cơ khí, đọc phát hiểu ngay!",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 190000,
     countInStock: 10,
@@ -981,7 +981,7 @@ const products = [
     description:
       "Sách gói đầu nằm cho sinh viên cơ khí",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 50000,
     countInStock: 10,
@@ -994,7 +994,7 @@ const products = [
     description:
       "Sách gói đầu nằm cho sinh viên cơ khí",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 50000,
     countInStock: 10,
@@ -1007,7 +1007,7 @@ const products = [
     description:
       "Tìm hiểu về các sự cố và cách giải quyết đối với các hệ thống điện",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 40000,
     countInStock: 10,
@@ -1020,7 +1020,7 @@ const products = [
     description:
       "Kĩ thuật Điện và Cơ khí",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 50000,
     countInStock: 10,
@@ -1033,7 +1033,7 @@ const products = [
     description:
       "Toàn bộ các thuật ngữ chuyên ngành cơ khí được thể hiện một cách rõ ràng, logic trong quyển sách này",
     brand: "Đại học quốc gia ",
-    category: "Sách Chuyên ngành",
+    category: "Sách chuyên ngành",
     pathCategory: "chuyennganh",
     price: 100000,
     countInStock: 10,

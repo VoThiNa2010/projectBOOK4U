@@ -47,7 +47,7 @@ const OrderScreen = ({ match }) => {
       document.body.appendChild(script);
     };
 
-    if (!order || successPay) {
+    if (!order || successPay || order._id !== orderId) {
       dispatch({ type: ORDER_PAY_RESET });
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
@@ -104,7 +104,7 @@ const OrderScreen = ({ match }) => {
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant="success">Đã thanh toán vào {order.paidAt}</Message>
+                <Message variant="success">Đã thanh toán </Message>
               ) : (
                 <Message variant="danger">Chưa thanh toán</Message>
               )}
@@ -175,7 +175,7 @@ const OrderScreen = ({ match }) => {
                   <Col>{order.totalPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
-              {!order.isPaid && (
+              {order.paymentMethod === 'Paypal' && !order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
                   {!stkReady ? (

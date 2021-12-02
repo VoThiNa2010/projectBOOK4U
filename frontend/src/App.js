@@ -16,9 +16,8 @@ import OrderScreen from "./screens/OrderScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
-import ProductEditScreen from "./screens/ProductEditScreen";
+//import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
-import ForgotPassScreen from "./screens/ForgotPassScreen";
 import ListCategory from "./components/ListCategory";
 import ListProductOfCategory from "./screens/ListProductOfCategory";
 import AdminScreen from "./screens/AdminScreen";
@@ -62,7 +61,6 @@ const App = () => {
           />
 
           <Route path="/search/:keyword" component={SearchScreen} />
-          <Route path="/forgotpass" component={ForgotPassScreen} />
           <Route path="/listcategory" component={ListCategory} />
           <Route
             path="/category/:pathName/list_product/"

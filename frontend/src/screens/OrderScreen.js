@@ -69,14 +69,14 @@ const OrderScreen = ({ match }) => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <h1>Đơn hàng {order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h2> Hóa đơn </h2>
               <p>
-                <strong>Name: </strong> {order.user.name}
+                <strong>Tên: </strong> {order.user.name}
               </p>
               <p>
                 <strong>Email: </strong>{" "}
@@ -90,10 +90,10 @@ const OrderScreen = ({ match }) => {
               </p>
               {order.isDelivered ? (
                 <Message variant="success">
-                  Delivered on {order.deliveredAt}
+                  Đã giao hàng vào {order.deliveredAt}
                 </Message>
               ) : (
-                <Message variant="danger">Not Delivered</Message>
+                <Message variant="danger">Chưa giao hàng</Message>
               )}
             </ListGroup.Item>
 
@@ -104,9 +104,9 @@ const OrderScreen = ({ match }) => {
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant="success">Paid on {order.paidAt}</Message>
+                <Message variant="success">Đã thanh toán vào {order.paidAt}</Message>
               ) : (
-                <Message variant="danger">Not Paid</Message>
+                <Message variant="danger">Chưa thanh toán</Message>
               )}
             </ListGroup.Item>
 
@@ -149,29 +149,29 @@ const OrderScreen = ({ match }) => {
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Tổng kết đơn hàng</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col> Items </Col>
-                  <Col>{order.itemsPrice} VND</Col>
+                  <Col> Giá đơn hàng </Col>
+                  <Col>{order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col> Shipping </Col>
+                  <Col> Phí vận chuyển </Col>
                   <Col>{order.shippingPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Tax</Col>
+                  <Col>Thuế </Col>
                   <Col>{order.taxPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
+                  <Col>Tổng tiền</Col>
                   <Col>{order.totalPrice} VND</Col>
                 </Row>
               </ListGroup.Item>

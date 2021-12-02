@@ -27,7 +27,7 @@ const Header = () => {
       <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>BOOK4U</Navbar.Brand>
+            <Navbar.Brand><strong>BOOK4U</strong></Navbar.Brand>
           </LinkContainer>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -36,7 +36,7 @@ const Header = () => {
             <Nav className="ms-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i> Giỏ hàng
+                  <i className="fas fa-shopping-cart"></i>  <strong>Giỏ hàng</strong>
                 </Nav.Link>
               </LinkContainer>
               {userInfo && userInfo.isAdmin && (
@@ -65,7 +65,7 @@ const Header = () => {
               ) : (
                 <LinkContainer to="/login">
                   <Nav.Link>
-                    <i className="fas fa-user"></i>Đăng nhập
+                    <i className="fas fa-user"></i> <strong>Đăng nhập</strong>
                   </Nav.Link>
                 </LinkContainer>
               )}

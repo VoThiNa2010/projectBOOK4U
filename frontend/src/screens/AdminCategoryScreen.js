@@ -41,14 +41,14 @@ const AdminBrandScreen = ({ history, match }) => {
                     <div className="admin-categ">
                         <div className="admin-categ-header">
                             <button type="button" className="add-brand-btn">
-                                <Link to={"/admin/brand"}>Back </Link>
+                                <Link to={"/admin/brand"}>Quay lại </Link>
                             </button>
 
                             <h2>{`Catagorys of ${match.params.name}`}</h2>
 
                             <button type="button" className="add-brand-btn">
                                 <Link to={`/admin/add/category/${match.params.name}`}>
-                                    Add Categories +{" "}
+                                    Thêm danh mục +{" "}
                                 </Link>
                             </button>
                         </div>
@@ -60,7 +60,7 @@ const AdminBrandScreen = ({ history, match }) => {
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name Category</th>
+                                            <th>Tên danh mục</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>

@@ -2,7 +2,7 @@ import React from "react";
 import { Spinner } from "react-bootstrap";
 const Loader = () => {
   return (
-    <Spinner
+    /*<Spinner
       animation="border"
       role="status"
       style={{
@@ -13,7 +13,10 @@ const Loader = () => {
       }}
     >
         <span className='sr-only'>Loading...</span>
-    </Spinner>
+    </Spinner>*/
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
   );
 };
 

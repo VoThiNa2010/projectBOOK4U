@@ -24,10 +24,12 @@ const HomeScreen = ({ match }) => {
     <>
       <Advertisement />
       <ListCategory />
-      <h1>Danh sách sản phẩm</h1>
+      <h1><strong>Danh sách sản phẩm</strong></h1>
 
       {loading ? (
-        <h2>Loading...</h2>
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
       ) : error ? (
         <h3>{error}</h3>
       ) : (

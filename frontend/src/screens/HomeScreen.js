@@ -9,8 +9,8 @@ import Advertisement from "../components/Advertisement";
 
 import { listProducts } from "../actions/productActions";
 
-const HomeScreen = ({match}) => {
-  const keyword = match.params.keyword
+const HomeScreen = ({ match }) => {
+  const keyword = match.params.keyword;
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList || {});
@@ -22,8 +22,8 @@ const HomeScreen = ({match}) => {
 
   return (
     <>
-      <Advertisement/>
-     <ListCategory/>
+      <Advertisement />
+      <ListCategory />
       <h1>Danh sách sản phẩm</h1>
 
       {loading ? (
@@ -32,13 +32,13 @@ const HomeScreen = ({match}) => {
         <h3>{error}</h3>
       ) : (
         <Container>
-              <Row>
-                {(products || []).map((product) => (
-                  <Col key={product._id} sm={6} md={4} lg={4} xl={3}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-              </Row>
+          <Row>
+            {(products || []).map((product) => (
+              <Col key={product._id} sm={6} md={4} lg={4} xl={3}>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
         </Container>
       )}
     </>

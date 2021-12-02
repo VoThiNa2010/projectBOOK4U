@@ -121,16 +121,7 @@ export const deleteCategory =
   };
 
 export const addNewProduct =
-  (
-    name,
-    brand,
-    category,
-    pathCategory,
-    description,
-    price,
-    countInStock,
-    image
-  ) =>
+  (name, brand, pathCategory, description, price, countInStock, image) =>
   async (dispatch, getState) => {
     try {
       dispatch({
@@ -151,7 +142,6 @@ export const addNewProduct =
         {
           name,
           brand,
-          category,
           pathCategory,
           description,
           price,

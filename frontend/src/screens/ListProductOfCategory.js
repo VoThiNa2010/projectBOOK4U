@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { listProductsOfCategory} from "../actions/categoryAction";
+import { listProductsOfCategory } from "../actions/categoryAction";
+import {Container } from "react-bootstrap";
 import Product from "../components/Product";
 import { listCategories } from "../actions/categoryAction";
 import Cate from "../components/Cate"
@@ -22,7 +23,8 @@ function Hello({ match }) {
 
   return (
     <>
-      <Advertisement/>
+      <Advertisement />
+      <Container>
       <div id="brand-list">
           {(categories || []).map((cate) => (
             <div key={cate._id}>
@@ -30,6 +32,7 @@ function Hello({ match }) {
             </div>
           ))}
         </div>
+        </Container>
       <div className="food-overlay">
         <div id="food-list">
           {(ProductsOfCategory || []).map((product) => (

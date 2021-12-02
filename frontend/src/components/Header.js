@@ -39,6 +39,19 @@ const Header = () => {
                   <i className="fas fa-shopping-cart"></i> Giỏ hàng
                 </Nav.Link>
               </LinkContainer>
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown title="Admin" id="adminmenu">
+                  <LinkContainer to="/admin/userlist">
+                    <NavDropdown.Item>Quản lý khách hàng</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/admin/category">
+                    <NavDropdown.Item>Quản lý sản phẩm</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/admin/orderlist">
+                    <NavDropdown.Item>Đơn đặt hàng</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+              )}
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <LinkContainer to="/profile">
@@ -56,19 +69,7 @@ const Header = () => {
                   </Nav.Link>
                 </LinkContainer>
               )}
-              {userInfo && userInfo.isAdmin && (
-                <NavDropdown title="Admin" id="adminmenu">
-                  <LinkContainer to="/admin/userlist">
-                    <NavDropdown.Item>Quản lý khách hàng</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to="/admin/category">
-                    <NavDropdown.Item>Quản lý sản phẩm</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to="/admin/orderlist">
-                    <NavDropdown.Item>Đơn đặt hàng</NavDropdown.Item>
-                  </LinkContainer>
-                </NavDropdown>
-              )}
+              
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -60,7 +60,6 @@ const ProductScreen = ({ history, match }) => {
     );
   };
 
-
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
@@ -79,23 +78,58 @@ const ProductScreen = ({ history, match }) => {
             <Col md={6}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <Row>
-                    <Col>Giá: </Col>
+                      <Row>
+                        <Col><strong>Tên sản phẩm:</strong></Col>
                     <Col>
-                          <strong>{product.price}</strong>
+                      <strong>{product.name}</strong>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col> <strong>Giá:</strong> </Col>
+                    <Col>
+                      {product.price}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+
+                    <ListGroup.Item>
+                      <Row> 
+                      <Col><strong>Đánh giá:</strong> </Col>
+                      <Col>
+                  <Rating
+                    value={product.rating}
+                    text={`${product.numReviews} reviews`}
+                  />
+                  </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col><strong>Nhà xuất bản:</strong></Col>
+                    <Col>
+                     {product.brand}
                     </Col>
                   </Row>
                 </ListGroup.Item>
 
                 <ListGroup.Item>
-                  <Rating
-                    value={product.rating}
-                    text={`${product.numReviews} reviews`}
-                  />
+                  <Row>
+                    <Col><strong>Thể loại:</strong></Col>
+                    <Col>
+                     {product.category}
+                    </Col>
+                  </Row>
                 </ListGroup.Item>
 
-                <ListGroup.Item>Gía: {product.price} </ListGroup.Item>
-                <ListGroup.Item>Mô tả: {product.description}</ListGroup.Item>
+                    <ListGroup.Item>
+                      <Row>
+                      <Col><strong>Gía:</strong></Col>
+                  <Col>    {product.price}{" "} </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item><strong>Mô tả:</strong> {product.description}</ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
@@ -105,7 +139,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Gía: </Col>
                       <Col>
-                        <strong>formatter.format({product.price}) VND</strong>
+                        <strong>{product.price} VND</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>

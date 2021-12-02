@@ -82,28 +82,28 @@ const deleteCategoryByPathName = asyncHandler(async (req, res) => {
 });
 
 const addNewProduct = asyncHandler(async (req, res) => {
-  const {
-    name,
-    brand,
-    category,
-    pathCategory,
-    description,
-    price,
-    countInStock,
-    image,
-  } = req.body;
-  const admin = await User.findOne({isAdmin: true})
-  const categorytest = await  Category.findOne({ pathName: pathCategory });
+  const { name, brand, pathCategory, description, price, countInStock, image } =
+    req.body;
+  const admin = await User.findOne({ isAdmin: true });
+  /*const categorytest = await  Category.findOne({ pathName: pathCategory });
   if (!categorytest) {
     res.status(400);
     throw new Error("CategoryName is not existed");
+  }
+*/
+  const categoryName = await Category.findOne({ pathName: pathCategory });
+
+  if (!categoryName) {
+    res.status(400);
+    throw new Error("Categoryname is not existed");
   }
 
   const newProduct = await Product.create({
     user: admin._id,
     name,
     brand,
-    category,
+    //category,
+    category: categoryName.categoryName,
     pathCategory,
     description,
     price,
@@ -129,24 +129,6 @@ const addNewProduct = asyncHandler(async (req, res) => {
   }
 });
 
-/*
-const deleteProductByPathName = asyncHandler(async (req, res) => {
-  const category = await Category.findOne({
-    catePathName: req.params.pathName,
-  });
-  const products = await Product.find({ category: category.cateName });
-  if (category) {
-    for (let i = 0; i < products.length; i++) {
-      await products[i].remove();
-    }
-    await category.remove();
-    res.json({ message: "Category removed" });
-  } else {
-    res.status(404);
-    throw new Error("Category not found");
-  }
-});
-*/
 export {
   getCategory,
   getCategoryByPathName,

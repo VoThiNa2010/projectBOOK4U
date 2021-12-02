@@ -12,12 +12,11 @@ import axios from "axios";
 const AddCateScreen = ({ location, history, match }) => {
   const [name, setName] = useState("");
   const [brand, setBrand] = useState("");
-  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [countInStock, setCountInStock] = useState("");
   const [image, setImage] = useState("");
-  const [uploading, setUploading] = useState(false)
+  const [uploading, setUploading] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -25,53 +24,50 @@ const AddCateScreen = ({ location, history, match }) => {
   const { loading, error, userInfo } = userLogin;
 
   const userDetails = useSelector((state) => state.userDetails);
-  const {  user } = userDetails;
- 
+  const { user } = userDetails;
+
   const uploadFileHandle = async (e) => {
-    const file = e.target.files[0]
-    const formData = new FormData()
-    formData.append('image', file)
-    setUploading(true)
-    console.log(formData)
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+    setUploading(true);
+    console.log(formData);
     try {
-        const config = {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        }
-        const { data } = await axios.post('/api/upload', formData, config)
-        setImage(data)
-        setUploading(false)
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
+      const { data } = await axios.post("/api/upload", formData, config);
+      setImage(data);
+      setUploading(false);
     } catch (error) {
-        setUploading(false)
+      setUploading(false);
     }
-  }
+  };
 
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   useEffect(() => {
     if (!userInfo || !userInfo.isAdmin) {
-      history.push('/login')
-    }    
-  }, [dispatch, history, userInfo, redirect, user ]);
+      history.push("/login");
+    }
+  }, [dispatch, history, userInfo, redirect, user]);
 
-  
-
- 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(addNewProduct(
-      name,
-      brand,
-      category,
-      match.params.pathname,
-      description,
-      price,
-      countInStock,    
-      
-      image
-    ))
-    history.push(`/admin/product/${match.params.pathname}`)
+    dispatch(
+      addNewProduct(
+        name,
+        brand,
+        match.params.pathname,
+        description,
+        price,
+        countInStock,
+        image
+      )
+    );
+    history.push(`/admin/product/${match.params.pathname}`);
   };
 
   return (
@@ -95,15 +91,6 @@ const AddCateScreen = ({ location, history, match }) => {
             type="text"
             placeholder="Enter brand name"
             onChange={(e) => setBrand(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId="text">
-          <Form.Label> Category </Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter category name"
-            onChange={(e) => setCategory(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
@@ -142,7 +129,13 @@ const AddCateScreen = ({ location, history, match }) => {
             onChange={(e) => setImage(e.target.value)}
             value={image}
           ></Form.Control>
-          <Form.Control type='file' id='image-file' label='Choose file' custom onChange={uploadFileHandle}></Form.Control>
+          <Form.Control
+            type="file"
+            id="image-file"
+            label="Choose file"
+            custom
+            onChange={uploadFileHandle}
+          ></Form.Control>
           {uploading && <Loader />}
         </Form.Group>
         <br></br>

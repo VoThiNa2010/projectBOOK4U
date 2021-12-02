@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Rating from "./Rating";
+import "./MyStyle.css"
 
 
 const Product = ({ product }) => {
@@ -12,14 +13,14 @@ const Product = ({ product }) => {
   product.price = addDecimals(product.price)
   return (
     <Card className="my-3 p-3 rounded">
-      <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant="top" />
+      <Link  to={`/product/${product._id}`}>
+        <img className="product-image" src={product.image} variant="top" />
       </Link>
       <Card.Body>
         <Link to={`/product/${product._id}`}>
-          <Card.Title as="div">
+          <div className = "product-name">
             <strong>{product.name}</strong>
-          </Card.Title>
+          </div>
         </Link>
         
         <Card.Text as="div">
@@ -29,7 +30,7 @@ const Product = ({ product }) => {
           />
         </Card.Text>
         <Card.Text>
-          <Card.Text as="h3">{product.price}</Card.Text>
+          <div className="product-price">{product.price}</div>
         </Card.Text>
       </Card.Body>
     </Card>

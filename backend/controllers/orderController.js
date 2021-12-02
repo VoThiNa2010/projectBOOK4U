@@ -94,5 +94,24 @@ const getMyOrders = asyncHandler(async (req, res) => {
 const getOrders = asyncHandler(async (req,res) => {
   const orders = await Order.find({}).populate('user','id name')
   res.json(orders)
-}) 
-export {addOrderItems, getOrderById, updateOrderToPaid, getOrders, getMyOrders}
+})
+
+const updateStatus = asyncHandler(async(req, res) => {
+  const order = await Order.findById(req.params.id)
+  if (order) {
+    if(req.body.status === "Đã thanh toán"){
+      order.isPaid = true
+    }
+    else {
+      order.status = req.body.status || order.status
+    }
+    const newOrder = await order.save()
+    res.json(newOrder)
+  }
+  else {
+    res.status(404)
+    throw new Error("Order not found")
+  }
+})
+
+export {addOrderItems, getOrderById, updateOrderToPaid, getOrders, getMyOrders, updateStatus}

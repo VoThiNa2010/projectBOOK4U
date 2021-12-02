@@ -15,6 +15,9 @@ import {
   ORDER_LIST_REQUEST,
   ORDER_LIST_SUCCESS,
   ORDER_LIST_FAIL,
+  UPDATE_ORDER_REQUEST,
+  UPDATE_ORDER_SUCCESS,
+  UPDATE_ORDER_FAIL,
 } from "../constants/orderConstants";
 import axios from "axios";
 
@@ -179,3 +182,32 @@ export const listOrders = () => async (dispatch, getState) => {
     });
   }
 };
+
+
+
+export const updateOrder = (id,status) => async (dispatch, getState) => {
+ try {
+  dispatch({
+    type: UPDATE_ORDER_REQUEST
+  })
+  const userInfo = getState().userLogin.userInfo;
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${userInfo.token}`,
+    },
+  };
+  await axios.put(`/api/orders/${id}`, {status}, config)
+  dispatch({
+    type: UPDATE_ORDER_SUCCESS
+  })
+ } catch (error) {
+  dispatch({
+    type: UPDATE_ORDER_FAIL,
+    payload:
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message,
+  });
+ } 
+}

@@ -24,10 +24,7 @@ const OrderScreen = ({ match }) => {
 
   if (!loading) {
     const addDecimals = (num) => {
-      return num.toLocaleString("it-IT", {
-        style: "currency",
-        currency: "VND",
-      });
+     return (Math.round(num * 100) / 100).toFixed(0);
     };
     order.itemsPrice = addDecimals(
       order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
@@ -176,29 +173,7 @@ const OrderScreen = ({ match }) => {
                   <Col>{order.totalPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
-              {/*order.paymentMethod === 'Paypal' && !order.isPaid && (
-                <ListGroup.Item>
-                  {loadingPay && <Loader />}
-                  {!stkReady ? (
-                    <Loader />
-                  ) : (
-                    <PayPalButton
-                      amount={order.totalPrice}
-                      onSuccess={successPaymentHandler}
-                    />
-                  )}
-                </ListGroup.Item>
-              )}
-              {order.paymentMethod === "Trực tiếp" && (
-                <Message variant="success">
-                  <div style={{ width: "100%" }}>
-                    <p style={{ textAlign: "center" }}>
-                      PLEASE PAY FOR RECEPTIONIST
-                    </p>
-                  </div>
-                </Message>
-              )*/}
-                   {!order.isPaid && (order.paymentMethod === "PayPal")&& (
+                {!order.isPaid && (order.paymentMethod === "PayPal")&& (
                 <ListGroup.Item>
                   {loadingPay && <Loader/> }
                   {!stkReady ? <Loader/> : (

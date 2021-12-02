@@ -9,8 +9,8 @@ const products = [
     pathCategory: "daicuong",
     price: 45000,
     countInStock: 20,
-    rating: 4.5,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Giáo trình giải tích 2",
@@ -22,8 +22,8 @@ const products = [
     pathCategory: "daicuong",
     price: 47000,
     countInStock: 7,
-    rating: 4.0,
-    numReviews: 8,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Vật lý đại cương 1",
@@ -35,8 +35,8 @@ const products = [
     pathCategory: "daicuong",
     price: 29000,
     countInStock: 5,
-    rating: 3,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Kinh tế học đại cương",
@@ -48,8 +48,8 @@ const products = [
     pathCategory: "daicuong",
     price: 48000,
     countInStock: 7,
-    rating: 3.5,
-    numReviews: 10,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Pháp luật đại cương",
@@ -61,8 +61,8 @@ const products = [
     pathCategory: "daicuong",
     price:39000,
     countInStock: 8,
-    rating: 4,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Giáo trình tư tương Hồ Chí Minh",
@@ -74,8 +74,8 @@ const products = [
     pathCategory: "daicuong",
     price: 39000,
     countInStock: 15,
-    rating: 4,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Giáo trình Hóa sinh công nghiệp",
@@ -87,8 +87,8 @@ const products = [
     pathCategory: "daicuong",
     price: 43000,
     countInStock: 10,
-    rating: 4,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Giáo trình Xác suất và Thống kê",
@@ -100,8 +100,8 @@ const products = [
     pathCategory: "daicuong",
     price: 50000,
     countInStock: 9,
-    rating: 4,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Bí quyết học bổng",
@@ -113,8 +113,8 @@ const products = [
     pathCategory: "daicuong",
     price: 150000,
     countInStock: 0,
-    rating: 5,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
 ];
 

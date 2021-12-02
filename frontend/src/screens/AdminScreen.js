@@ -59,7 +59,7 @@ const AdminScreen = ({ history }) => {
                         <Col>
                             <div>
                                 <div className="add-brand">
-                                        <h2>Categories</h2>
+                                        <h2><strong>Các thể loại sách </strong></h2>
                                         <button type="button" className="add-brand-btn"><Link to={`/admin/add/category`}>Add Category +</Link></button>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@ const AdminScreen = ({ history }) => {
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Name Brand</th>
+                                                    <th>Thể loại sách</th>
                                                     <th>
 
                                                     </th>

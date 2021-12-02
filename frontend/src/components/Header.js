@@ -19,6 +19,7 @@ const Header = () => {
   const logoutHandler = () => {
     dispatch(updateCart(cartItems));
     dispatch(removeAllCart());
+    localStorage.clear();
     dispatch(logout());
   };
 

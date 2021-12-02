@@ -75,7 +75,7 @@ const AddCateScreen = ({ location, history, match }) => {
       <h1>Add Category </h1>
       {error && <Message variant="danger">{error} </Message>}
       {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
+      <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column"}}>
         <Form.Group controlId="text">
           <Form.Label> Name </Form.Label>
           <Form.Control
@@ -141,7 +141,7 @@ const AddCateScreen = ({ location, history, match }) => {
         <br></br>
         <Image src={image} alt="image" fluid rounded></Image>
         <br></br>
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" style={{alignSelf:"center"}}>
           Confirm
         </Button>
       </Form>

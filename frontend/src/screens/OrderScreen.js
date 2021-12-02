@@ -47,12 +47,12 @@ const OrderScreen = ({ match }) => {
       document.body.appendChild(script);
     };
 
-    if (!order || successPay) {
+    if (!order || successPay || order._id !== orderId) {
       dispatch({ type: ORDER_PAY_RESET });
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
-        if (order.paymentMethod === 'Paypal') addPayPalScript();
+        addPayPalScript();
       } else {
         setStkReady(true);
       }
@@ -61,6 +61,7 @@ const OrderScreen = ({ match }) => {
 
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(orderId, paymentResult));
+
   };
 
   return loading ? (
@@ -104,7 +105,7 @@ const OrderScreen = ({ match }) => {
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant="success">Đã thanh toán vào {order.paidAt}</Message>
+                <Message variant="success">Đã thanh toán </Message>
               ) : (
                 <Message variant="danger">Chưa thanh toán</Message>
               )}
@@ -175,7 +176,7 @@ const OrderScreen = ({ match }) => {
                   <Col>{order.totalPrice} VND</Col>
                 </Row>
               </ListGroup.Item>
-              {order.paymentMethod === 'Paypal' && !order.isPaid && (
+              {/*order.paymentMethod === 'Paypal' && !order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
                   {!stkReady ? (
@@ -196,6 +197,18 @@ const OrderScreen = ({ match }) => {
                     </p>
                   </div>
                 </Message>
+              )*/}
+                   {!order.isPaid && (order.paymentMethod === "PayPal")&& (
+                <ListGroup.Item>
+                  {loadingPay && <Loader/> }
+                  {!stkReady ? <Loader/> : (
+                    <PayPalButton amount={(parseInt(order.totalPrice / 23000))}
+                    onSuccess={successPaymentHandler}/>
+                  )}
+                </ListGroup.Item>
+              )}
+              {order.paymentMethod === "Trực tiếp" && (
+                <Message variant = 'success' ><div style={{width:"100%"}}><p style={{textAlign:"center"}}>PLEASE PAY FOR RECEPTIONIST</p></div></Message>
               )}
             </ListGroup>
           </Card>

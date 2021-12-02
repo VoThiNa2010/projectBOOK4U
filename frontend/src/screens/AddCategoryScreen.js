@@ -46,7 +46,7 @@ const AddCategoryScreen = ({ location, history }) => {
       <h1>Thêm danh mục</h1>
       {error && <Message variant="danger">{error} </Message>}
       {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
+      <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column"}}>
         <Form.Group controlId="email">
           <Form.Label> Tên </Form.Label>
           <Form.Control
@@ -65,7 +65,7 @@ const AddCategoryScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" style={{alignSelf:"center"}}>
           Xác nhận
         </Button>
       </Form>

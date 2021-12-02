@@ -456,7 +456,7 @@ const products = [
   },
   {
     name: "Đấu phá thương khung",
-    image: "/images/tc7.jpg",
+    image: "/images/tc7.jpeg",
     description:
       "Đấu Phá Thương Khung là một câu chuyện huyền huyễn đặc sắc kể về Tiêu Viêm, một thiên chi kiêu tử với thiên phú tu luyện mà ai ai cũng hâm mộ, bỗng một ngày người mẹ mất đi đễ lại di vật là một chiếc giới chỉ màu đen nhưng từ khi đó Tiêu Viêm đã mất đi thiên phú tu luyện của mình.",
     brand: "Đại học quốc gia ",
@@ -1003,7 +1003,7 @@ const products = [
   },
   {
     name: "Ngắn mạch và đứt dây trong hệ thống điện",
-    image: "/images/cn18.jpg",
+    image: "/images/cn18.png",
     description:
       "Tìm hiểu về các sự cố và cách giải quyết đối với các hệ thống điện",
     brand: "Đại học quốc gia ",
@@ -1016,7 +1016,7 @@ const products = [
   },
   {
     name: "Electrical and Mechanical Engineering",
-    image: "/images/cn19.png",
+    image: "/images/cn19.jpg",
     description:
       "Kĩ thuật Điện và Cơ khí",
     brand: "Đại học quốc gia ",
@@ -1029,7 +1029,7 @@ const products = [
   },
   {
     name: "Sổ tay chuyên ngành cơ khí",
-    image: "/images/cn20.png",
+    image: "/images/cn20.jpg",
     description:
       "Toàn bộ các thuật ngữ chuyên ngành cơ khí được thể hiện một cách rõ ràng, logic trong quyển sách này",
     brand: "Đại học quốc gia ",

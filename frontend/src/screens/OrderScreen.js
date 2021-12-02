@@ -52,7 +52,7 @@ const OrderScreen = ({ match }) => {
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
-        addPayPalScript();
+        if (order.paymentMethod === 'Paypal') addPayPalScript();
       } else {
         setStkReady(true);
       }

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductsOfCategory } from "../actions/categoryAction";
 import {Container } from "react-bootstrap";
@@ -7,6 +7,7 @@ import Product from "../components/Product";
 import { listCategories } from "../actions/categoryAction";
 import Cate from "../components/Cate"
 import Advertisement from "../components/Advertisement"
+import "../components/MyStyle.css"
 
 function Hello({ match }) {
   const dispatch = useDispatch();
@@ -33,15 +34,17 @@ function Hello({ match }) {
           ))}
         </div>
         </Container>
-      <div className="food-overlay">
-        <div id="food-list">
+      
+      <Container>
+          <Row>
           {(ProductsOfCategory || []).map((product) => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
               <Product product={product} />
             </Col>
           ))}
-        </div>
-      </div>
+         </Row>
+        </Container>
+     
     </>
   );
 }

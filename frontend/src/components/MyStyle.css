@@ -120,6 +120,40 @@
     align-self: start !important;
 }
 .product-image {
+  height: 300px;
+  width: 230px;
     border-radius: 0px;
     width: 100%;
+}
+
+.food-overlay{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+}
+#food-list {
+    width: 80%;
+    height: max-content;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#brand-list{
+    width: 80% ;
+    margin-top: 50px;
+    padding: 50px 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+} 
+
+.product-image:hover {
+    box-shadow: 1px 1px 6px rgb(63, 63, 63);
 }

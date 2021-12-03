@@ -1,106 +1,132 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import { Button, Row, Col, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { getUserDetails} from "../actions/userActions";
-import { listCategories, deleteCategory, addNewCategory} from "../actions/categoryAction";
-import { Link } from 'react-router-dom'
+import { getUserDetails } from "../actions/userActions";
+import {
+  listCategories,
+  deleteCategory,
+  addNewCategory,
+} from "../actions/categoryAction";
+import { Link } from "react-router-dom";
 
 const AdminScreen = ({ history }) => {
-  
-    const dispatch = useDispatch();
-  
-    const userDetails = useSelector((state) => state.userDetails);
-    const { loading, error, user } = userDetails;
-  
-    const userLogin = useSelector((state) => state.userLogin);
-    const { userInfo } = userLogin;
+  const dispatch = useDispatch();
 
-    const deleteOneCategory = useSelector((state) => state.deleteOneCategory)
-    const {success: successDeleteCategory} = deleteOneCategory
+  const userDetails = useSelector((state) => state.userDetails);
+  const { loading, error, user } = userDetails;
 
-    const addOneCategory = useSelector((state) => state.addOneCategory)
-    const {success: successAddCategory} = addOneCategory
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
-    const categoryList = useSelector((state) => state.categoryList || {})
-    const { loading: loadingCategories, error: errorCategories, categories} = categoryList
+  const deleteOneCategory = useSelector((state) => state.deleteOneCategory);
+  const { success: successDeleteCategory } = deleteOneCategory;
 
+  const addOneCategory = useSelector((state) => state.addOneCategory);
+  const { success: successAddCategory } = addOneCategory;
 
-        useEffect(() => {
-      if (!userInfo) {
-        history.push("/login");
+  const categoryList = useSelector((state) => state.categoryList || {});
+  const {
+    loading: loadingCategories,
+    error: errorCategories,
+    categories,
+  } = categoryList;
+
+  useEffect(() => {
+    if (!userInfo) {
+      history.push("/login");
+    } else {
+      if (!user?.name) {
+        dispatch(getUserDetails("profile"));
       }
-      else {
-        if (!user?.name) {
-          dispatch(getUserDetails('profile'));
-        }  
+      dispatch(listCategories());
+
+      if (successDeleteCategory) {
         dispatch(listCategories());
-
-        
-        if(successDeleteCategory){
-            dispatch(listCategories());
-        }
+      }
     }
-    }, [dispatch, history, userInfo, user, successDeleteCategory, successAddCategory]);
-  
+  }, [
+    dispatch,
+    history,
+    userInfo,
+    user,
+    successDeleteCategory,
+    successAddCategory,
+  ]);
 
-    const removeBrandHandler = (pathName) => {
-        console.log("delete brand")
-        dispatch(deleteCategory(pathName));
-    }
+  const removeBrandHandler = (pathName) => {
+    console.log("delete brand");
+    dispatch(deleteCategory(pathName));
+  };
 
-
-    return (
-        loading ? <></> : (!user?.isAdmin ? <h1>BẠN KHÔNG CÓ QUYỀN TRUY CẬP VÀO TRANG NÀY !!! </h1> : (
-            <Row style={{ marginTop: "100px" }}>
-                <Row>
-                    {loadingCategories ? <Loader /> : errorCategories ? <Message variant='danger'>{errorCategories}</Message> : (
-                        <Col>
-                            <div>
-                                <div className="add-brand">
-                                        <h2><strong>Các thể loại sách </strong></h2>
-                                        <button type="button" className="add-brand-btn"><Link to={`/admin/add/category`}>Add Category +</Link></button>
-                                </div>
-                            </div>
-                            <div className="add-brand-overlay">
-                                <div className="add-brand-title">
-                                    <Col md={10}>
-                                        <Table striped bordered hover responsive className='table-sm'>
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Thể loại sách</th>
-                                                    <th>
-
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {categories.map(category => (
-                                                    <tr key={category._id}>
-                                                        <td>{category._id}</td>
-                                                        <td><Link to={`/admin/product/${category.pathName}`}>{category.categoryName}</Link></td>
-                                                        <td>
-                                                            <Button type='button' variant='light' onClick={() => removeBrandHandler(category.pathName)}><i className='fas fa-trash'></i></Button>
-                                                        </td>
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </Table>
-                                    </Col>
-                                </div>
-                            </div>
-                        </Col>
-
-                    )}
-                </Row>
-            </Row>
-        )
-        ))
-}
-
-
-
+  return loading ? (
+    <></>
+  ) : !user?.isAdmin ? (
+    <h1>BẠN KHÔNG CÓ QUYỀN TRUY CẬP VÀO TRANG NÀY !!! </h1>
+  ) : (
+    <Row style={{ marginTop: "100px" }}>
+      <Row>
+        {loadingCategories ? (
+          <Loader />
+        ) : errorCategories ? (
+          <Message variant="danger">{errorCategories}</Message>
+        ) : (
+          <Col>
+            <div>
+              <div className="add-brand">
+                <h2>
+                  <strong>Các thể loại sách </strong>
+                
+                <button type="button" class="btn btn-outline-primary" style={{alignSelf:"center", marginLeft: "50px"}}>
+                  <Link to={`/admin/add/category`}>Thêm thể loại +</Link>
+                </button>
+                </h2>
+              </div>
+            </div>
+            <div className="add-brand-overlay">
+              <div className="add-brand-title">
+                <Col md={10}>
+                  <Table striped bordered hover responsive className="table-sm">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Thể loại sách</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {categories.map((category) => (
+                        <tr key={category._id}>
+                          <td>{category._id}</td>
+                          <td>
+                            <Link to={`/admin/product/${category.pathName}`}>
+                              {category.categoryName}
+                            </Link>
+                          </td>
+                          <td>
+                            <Button
+                              type="button"
+                              variant="light"
+                              onClick={() =>
+                                removeBrandHandler(category.pathName)
+                              }
+                            >
+                              <i className="fas fa-trash"></i>
+                            </Button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </Col>
+              </div>
+            </div>
+          </Col>
+        )}
+      </Row>
+    </Row>
+  );
+};
 
 export default AdminScreen;

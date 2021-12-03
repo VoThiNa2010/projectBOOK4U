@@ -7,20 +7,17 @@ import { deleteProduct } from "../actions/productActions";
 
 const AdminScreen = ({ match }) => {
   const dispatch = useDispatch();
-  
 
   const productListOfCategory = useSelector(
     (state) => state.productListOfCategory || {}
   );
   const { ProductsOfCategory } = productListOfCategory;
 
-    useEffect(() => {
-      
+  useEffect(() => {
     dispatch(listProductsOfCategory(match.params.pathname));
-    }, [dispatch, match]);
-     console.log("kkk",match)
+  }, [dispatch, match]);
+  console.log("kkk", match);
 
-   
   const removeProductHandler = (id) => {
     dispatch(deleteProduct(id));
     console.log("delete product");
@@ -32,15 +29,17 @@ const AdminScreen = ({ match }) => {
         <Col>
           <div className="admin-categ">
             <div className="admin-categ-header">
-              <button type="button" className="add-brand-btn">
-                <Link to={`/admin/category`}>Quay lại </Link>
-              </button>
+              <Link className="btn btn-light my-3" to={`/admin/category`}>
+                Quay lại{" "}
+              </Link>
 
-              <h2>{/*`Products of Category ${match.params.pathname}`*/}</h2>
-
-              <button type="button" className="add-brand-btn">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                style={{ alignSelf: "center", marginLeft: "300px" }}
+              >
                 <Link to={`/admin/add/product/${match.params.pathname}`}>
-                  Thêm sản phẩm 
+                  Thêm sản phẩm +
                 </Link>
               </button>
             </div>

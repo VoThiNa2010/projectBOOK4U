@@ -43,29 +43,29 @@ const AddCategoryScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Thêm danh mục</h1>
+      <h1><strong>Thêm thể loại</strong></h1>
       {error && <Message variant="danger">{error} </Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column"}}>
         <Form.Group controlId="email">
-          <Form.Label> Tên </Form.Label>
+          <Form.Label> <strong>Tên</strong> </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Nhập tên danh mục"
+            placeholder="Nhập tên thể loại"
             onChange={(e) => setCategoryName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId="email">
-          <Form.Label> Đường dẫn </Form.Label>
+          <Form.Label><strong> Đường dẫn</strong> </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Nhập đường dẫn cho danh mục"
+            placeholder="Nhập đường dẫn"
             onChange={(e) => setPathName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary" style={{alignSelf:"center"}}>
+        <Button type="submit" variant="primary"  style={{alignSelf:"center", marginTop: "16px"}}>
           Xác nhận
         </Button>
       </Form>

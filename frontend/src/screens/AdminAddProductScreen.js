@@ -72,60 +72,60 @@ const AddCateScreen = ({ location, history, match }) => {
 
   return (
     <FormContainer>
-      <h1>Add Category </h1>
+      <h1> <strong>Thêm sản phẩm</strong> </h1>
       {error && <Message variant="danger">{error} </Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler} style={{display:"flex",flexDirection:"column"}}>
         <Form.Group controlId="text">
-          <Form.Label> Name </Form.Label>
+          <Form.Label> <strong>Name</strong> </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter name name"
+            placeholder="Nhập tên sản phẩm"
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId="text">
-          <Form.Label> Brand </Form.Label>
+          <Form.Label> <strong>Nhà xuất bản</strong> </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter brand name"
+            placeholder="Nhập nhà xuất bản"
             onChange={(e) => setBrand(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId="text">
-          <Form.Label> Description </Form.Label>
+          <Form.Label> <strong>Mô tả</strong> </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter description name"
+            placeholder="Nhập mô tả sản phẩm"
             onChange={(e) => setDescription(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId="text">
-          <Form.Label> Price </Form.Label>
+          <Form.Label> <strong>Gía</strong> </Form.Label>
           <Form.Control
             type="number"
-            placeholder="Enter price name"
+            placeholder="Nhập giá sản phẩm"
             onChange={(e) => setPrice(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId="text">
-          <Form.Label> Count In Stock</Form.Label>
+          <Form.Label> <strong>Số lượng sản phẩm</strong></Form.Label>
           <Form.Control
             type="number"
-            placeholder="Enter count In Stock "
+            placeholder="Nhập số lượng sản phẩm "
             onChange={(e) => setCountInStock(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId="Image">
-          <Form.Label> Image URL </Form.Label>
+          <Form.Label> <strong>Hình ảnh</strong> </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter image url"
+            placeholder="Nhập hình ảnh"
             onChange={(e) => setImage(e.target.value)}
             value={image}
           ></Form.Control>
@@ -142,7 +142,7 @@ const AddCateScreen = ({ location, history, match }) => {
         <Image src={image} alt="image" fluid rounded></Image>
         <br></br>
         <Button type="submit" variant="primary" style={{alignSelf:"center"}}>
-          Confirm
+          Xác nhận
         </Button>
       </Form>
     </FormContainer>

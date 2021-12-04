@@ -78,8 +78,8 @@ const ProductScreen = ({ history, match }) => {
             <Col md={6}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                      <Row>
-                        <Col><strong>Tên sản phẩm:</strong></Col>
+                  <Row>
+                    <Col><strong>Tên sản phẩm:</strong></Col>
                     <Col>
                       <strong>{product.name}</strong>
                     </Col>
@@ -94,22 +94,22 @@ const ProductScreen = ({ history, match }) => {
                   </Row>
                 </ListGroup.Item>
 
-                    <ListGroup.Item>
-                      <Row> 
-                      <Col><strong>Đánh giá:</strong> </Col>
-                      <Col>
-                  <Rating
-                    value={product.rating}
-                    text={`${product.numReviews} bình luận`}
-                  />
-                  </Col>
+                <ListGroup.Item>
+                  <Row>
+                    <Col><strong>Đánh giá:</strong> </Col>
+                    <Col>
+                      <Rating
+                        value={product.rating}
+                        text={`${product.numReviews} bình luận`}
+                      />
+                    </Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col><strong>Nhà xuất bản:</strong></Col>
                     <Col>
-                     {product.brand}
+                      {product.brand}
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -118,15 +118,8 @@ const ProductScreen = ({ history, match }) => {
                   <Row>
                     <Col><strong>Thể loại:</strong></Col>
                     <Col>
-                     {product.category}
+                      {product.category}
                     </Col>
-                  </Row>
-                </ListGroup.Item>
-
-                    <ListGroup.Item>
-                      <Row>
-                      <Col><strong>Gía:</strong></Col>
-                  <Col>    {product.price}{" "} </Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item><strong>Mô tả:</strong> {product.description}</ListGroup.Item>

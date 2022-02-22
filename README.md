@@ -31,9 +31,6 @@ FACULTY OF COMPUTER SCIENCE AND ENGINEERING
 - API
 - Report: 
 
-## Q&A
-`Plan ĐA CNPM'` https://docs.google.com/spreadsheets/d/1HxjkGehXkUHKlP2LHB8akTu2IX_OmZaYARPjA1-kNdk/edit#gid=924377117 <br />
-
 [fb1]: https://www.facebook.com/profile.php?id=100008252945479
 [fb2]: https://www.facebook.com/tranhoangkhoi312
 [fb3]: https://www.facebook.com/na.vothi2010
